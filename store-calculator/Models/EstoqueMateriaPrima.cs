@@ -9,28 +9,29 @@ namespace store_calculator.Models
         public decimal ValorPago { get; set; }
         public decimal ValorFrete { get; set; }
         public int QuantoFaz { get; set; }
-        public decimal TotalFinal { get { return ValorPago + ValorFrete; } }
+        public string Medida { get { return Quantidade.ToString() + " " + Unidade; } }
+        public decimal TotalFinal { get { return Math.Round((ValorPago + ValorFrete)/Quantidade,2); } }
         public decimal TotalUnitarioFinal { get { return Math.Round((TotalFinal / QuantoFaz), 2); } }
 
         public EstoqueMateriaPrima()
         {
             Nome = String.Empty;
-            Medida = 0;
-            ValorUnitario = 0.00M;
             Quantidade = 0;
+            Unidade = " UN.";
             QuantoFaz = 0;
             ValorPago = 0.00M;
+            ValorFrete = 0.00M;
         }
 
-        public EstoqueMateriaPrima(string nome, int medida, decimal valorUnitario, 
-                                    int quantidade, int quantoFaz, decimal valorPago, int pecasUtilizadas)
+        public EstoqueMateriaPrima(string nome, string unidade,int quantidade, 
+                                int quantoFaz, decimal valorFrete, decimal valorPago, int pecasUtilizadas)
         {
             Nome = nome;
-            Medida = medida;
-            ValorUnitario = valorUnitario;
+            Unidade = unidade;
             Quantidade = quantidade;
             QuantoFaz = quantoFaz;
             ValorPago = valorPago;
+            ValorFrete = valorFrete;
         }
     }
 }

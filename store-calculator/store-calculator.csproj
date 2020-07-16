@@ -69,7 +69,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\EstoqueMateriaPrima.cs" />
     <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\ConsumoMateriaPrima .cs" />
     <Compile Include="Models\MateriaPrima.cs" />
     <Compile Include="Models\ValorHora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

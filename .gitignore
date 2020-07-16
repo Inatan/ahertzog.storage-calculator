@@ -1,5 +1,5 @@
 # Don't track content of these folders
-vs/
+.vs/
 
 
 # Compiled source #
@@ -9,8 +9,6 @@ vs/
 *.dll
 *.exe
 *.o
-*.so
-
 *.so
 
 # Packages #
