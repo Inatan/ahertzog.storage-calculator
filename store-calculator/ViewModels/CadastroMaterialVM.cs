@@ -1,6 +1,5 @@
-﻿using store_calculator.Models;
+﻿using Store.Calculator.Model.Utils;
 using System;
-using System.Text.RegularExpressions;
 
 namespace store_calculator.ViewModels
 {
@@ -8,25 +7,12 @@ namespace store_calculator.ViewModels
     {
         public static bool ValidaDecimal(string texto, string digito)
         {
-
-            if (texto.Contains(","))
-            {
-                if (texto.Split(',')[1].Length > 1)
-                    return true;
-                Regex regex = new Regex("[0-9]");
-                return !regex.IsMatch(digito);
-            }
-            else
-            {
-                Regex regex = new Regex("[0-9,]");
-                return !regex.IsMatch(digito);
-            }
+            return EventsUtils.ValidaDecimal(texto, digito);
         }
 
         public static bool ValidaNumero(string texto, string digito)
         {
-            Regex regex = new Regex("[0-9]");
-            return !regex.IsMatch(digito);
+            return EventsUtils.ValidaNumero(texto, digito);
         }
 
         public static string CalculaValorUnitario(string quantidade,string quantosFaz, string valorPago, string valorFrete)
