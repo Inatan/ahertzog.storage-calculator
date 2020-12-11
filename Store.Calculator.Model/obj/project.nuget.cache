@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "I4W7d/uZOj6pw3IrhcKfA8/Za3KtlDBQ2otblGtI6T9uKDatimlaTSf2TTl46GxkJA9C/eYv5SoN7htInFc8UQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\inatan.hertzog\\Desktop\\Inatan\\products\\storage-calculator\\store-calculator\\Store.Calculator.Model\\Store.Calculator.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

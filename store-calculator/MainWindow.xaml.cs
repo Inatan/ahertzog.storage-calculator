@@ -1,4 +1,5 @@
-﻿using System;
+﻿using store_calculator.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace store_calculator
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroMateriaPrima tela = new CadastroMateriaPrima();
+            tela.ShowDialog();
+        }
+
+        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

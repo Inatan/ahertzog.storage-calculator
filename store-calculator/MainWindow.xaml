@@ -5,20 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:store_calculator"
         mc:Ignorable="d"
-        Title="Nome Material" Height="450" Width="800">
+        Title="Início" Height="106" Width="206">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="229" Margin="17,17,0,0" VerticalAlignment="Top" Width="698">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Material" HeaderStringFormat="Material"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Medida" HeaderStringFormat="Medida"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Quantidade" HeaderStringFormat="Quantidade"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Quantos Faz" HeaderStringFormat="Quantos Faz"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Valor Pago" HeaderStringFormat="Valor Pago"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Valor Unit." HeaderStringFormat="Valor Unit."/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Peças Utilizadas" HeaderStringFormat="Peças Utilizadas"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Total" HeaderStringFormat="Total"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Click="BtnCadastro_Click"  Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="178"/>
     </Grid>
 </Window>

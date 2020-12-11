@@ -1,7 +1,7 @@
 ﻿using System;
 
-namespace store_calculator.Models
-{
+namespace Store.Calculator.Model.App.Models
+{ 
     public class ConsumoMateriaPrima : MateriaPrima
     {
         public int Quantidade { get; set; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace store_calculator.Models
+namespace Store.Calculator.Model.App.Models
 {
     public class Material
     {
