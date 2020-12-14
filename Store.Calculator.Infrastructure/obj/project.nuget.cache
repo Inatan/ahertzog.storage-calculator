@@ -1,11 +1,32 @@
 {
   "version": 2,
-  "dgSpecHash": "BzRczOBctze7YVt1ZjkF7pAnpOQn5Y9aeU0z+WJmaO21XiZRKePxI7JHIrNUdJHm9k8GhWYAOJ4CmxXwkurXqg==",
-  "success": true,
+  "dgSpecHash": "ZWSJBrHYtNISkIo+4eFmSp8gi88I841sfWVnL7QF3I/RrumTxvO/x8E2uDYHNpN2A+4J9O/2dKvf8yPnlL/MkQ==",
+  "success": false,
   "projectFilePath": "C:\\Users\\inatan.hertzog\\Desktop\\Inatan\\products\\storage-calculator\\store-calculator\\Store.Calculator.Infrastructure\\Store.Calculator.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\inatan.hertzog\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.1\\microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
+    "C:\\Users\\inatan.hertzog\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.1\\microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "O pacote Microsoft.EntityFrameworkCore 5.0.1 não é compatível com netstandard2.0 (.NETStandard,Version=v2.0). O pacote Microsoft.EntityFrameworkCore 5.0.1 dá suporte a: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "O pacote Microsoft.EntityFrameworkCore.SqlServer 5.0.1 não é compatível com netstandard2.0 (.NETStandard,Version=v2.0). O pacote Microsoft.EntityFrameworkCore.SqlServer 5.0.1 dá suporte a: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

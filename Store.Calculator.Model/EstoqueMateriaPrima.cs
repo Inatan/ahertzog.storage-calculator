@@ -4,6 +4,7 @@ namespace Store.Calculator.Model
 {
     public class EstoqueMateriaPrima : MateriaPrima
     {
+        public int Id { get; }
         public string Unidade { get; set; }
         public int Quantidade { get; set; }
         public decimal ValorPago { get; set; }
@@ -15,6 +16,7 @@ namespace Store.Calculator.Model
 
         public EstoqueMateriaPrima()
         {
+            Id = 0;
             Nome = String.Empty;
             Quantidade = 0;
             Unidade = " UN.";
@@ -26,6 +28,7 @@ namespace Store.Calculator.Model
         public EstoqueMateriaPrima(string nome, string unidade,int quantidade, 
                                 int quantoFaz, decimal valorFrete, decimal valorPago, int pecasUtilizadas)
         {
+            Id = 0;
             Nome = nome;
             Unidade = unidade;
             Quantidade = quantidade;

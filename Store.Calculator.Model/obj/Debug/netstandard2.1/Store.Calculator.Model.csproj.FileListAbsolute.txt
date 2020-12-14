@@ -1,0 +1,9 @@
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\bin\Debug\netstandard2.1\Store.Calculator.Model.deps.json
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\bin\Debug\netstandard2.1\Store.Calculator.Model.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\bin\Debug\netstandard2.1\Store.Calculator.Model.pdb
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.csprojAssemblyReference.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.AssemblyInfoInputs.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.AssemblyInfo.cs
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.csproj.CoreCompileInputs.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Model\obj\Debug\netstandard2.1\Store.Calculator.Model.pdb
