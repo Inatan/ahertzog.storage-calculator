@@ -116,7 +116,7 @@ namespace store_calculator.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/store-calculator;component/views/cadastromateriaprima.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Store.Calculator.App;component/views/cadastromateriaprima.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Views\CadastroMateriaPrima.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
