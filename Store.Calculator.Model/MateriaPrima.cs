@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace store_calculator.Models
+namespace Store.Calculator.Model
 {
     public class MateriaPrima
     {

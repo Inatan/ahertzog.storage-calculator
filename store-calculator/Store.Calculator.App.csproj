@@ -107,6 +107,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Calculator.Model\Store.Calculator.Model.csproj">
+      <Project>{f1baa28c-d194-49b9-bb10-08867b518c0f}</Project>
+      <Name>Store.Calculator.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

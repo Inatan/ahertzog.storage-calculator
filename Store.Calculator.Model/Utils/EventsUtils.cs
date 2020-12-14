@@ -6,6 +6,9 @@ namespace Store.Calculator.Model.Utils
     {
         public static bool ValidaDecimal(string texto, string digito)
         {
+            if (texto.Length == 0 && digito.Contains(","))
+                return true;
+
             if (texto.Contains(","))
             {
                 Regex regex = new Regex("[0-9]");

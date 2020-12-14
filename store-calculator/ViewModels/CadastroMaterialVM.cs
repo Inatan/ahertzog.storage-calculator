@@ -1,20 +1,10 @@
-﻿using Store.Calculator.Model.Utils;
+﻿using Store.Calculator.Model;
 using System;
 
 namespace store_calculator.ViewModels
 {
     public class CadastroMaterialVM
     {
-        public static bool ValidaDecimal(string texto, string digito)
-        {
-            return EventsUtils.ValidaDecimal(texto, digito);
-        }
-
-        public static bool ValidaNumero(string texto, string digito)
-        {
-            return EventsUtils.ValidaNumero(texto, digito);
-        }
-
         public static string CalculaValorUnitario(string quantidade,string quantosFaz, string valorPago, string valorFrete)
         {
             string valorUnitario = string.Empty;

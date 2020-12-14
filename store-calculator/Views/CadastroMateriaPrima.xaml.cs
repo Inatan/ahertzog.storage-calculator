@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Text.RegularExpressions;
+using Store.Calculator.Model.Utils;
 using store_calculator.ViewModels;
 
 namespace store_calculator.Views
@@ -28,22 +17,22 @@ namespace store_calculator.Views
 
         private void DecimalValidationValorFrete(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = CadastroMaterialVM.ValidaDecimal(txtValorFrete.Text, e.Text);
+            e.Handled = EventsUtils.ValidaDecimal(txtValorFrete.Text, e.Text);
         }
 
         private void DecimalValidationValorPago(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = CadastroMaterialVM.ValidaDecimal(txtValorPago.Text, e.Text);
+            e.Handled = EventsUtils.ValidaDecimal(txtValorPago.Text, e.Text);
         }
 
         private void NumeroValidationQuantidade(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = CadastroMaterialVM.ValidaNumero(txtQuantidade.Text, e.Text);
+            e.Handled = EventsUtils.ValidaNumero(txtQuantidade.Text, e.Text);
         }
 
         private void NumeroValidationQuantoFaz(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = CadastroMaterialVM.ValidaNumero(txtQuantoFaz.Text, e.Text);
+            e.Handled = EventsUtils.ValidaNumero(txtQuantoFaz.Text, e.Text);
         }
 
 

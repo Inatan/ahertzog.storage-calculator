@@ -20,4 +20,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Calculator.Infrastructure\Store.Calculator.Infrastructure.csproj" />
+    <ProjectReference Include="..\Store.Calculator.Model\Store.Calculator.Model.csproj" />
+    <ProjectReference Include="..\Store.Calculator.Services\Store.Calculator.Services.csproj" />
+  </ItemGroup>
+
 </Project>

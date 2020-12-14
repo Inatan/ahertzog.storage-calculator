@@ -33,5 +33,17 @@ namespace Store.Calculator.Model
             ValorPago = valorPago;
             ValorFrete = valorFrete;
         }
+
+        public static string CalculaValorUnitario(string quantidade, string quantosFaz, string valorPago, string valorFrete)
+        {
+            string valorUnitario = string.Empty;
+            if (!string.IsNullOrEmpty(quantidade) && !string.IsNullOrEmpty(quantosFaz) && !string.IsNullOrEmpty(valorPago) && !string.IsNullOrEmpty(valorFrete))
+            {
+                int qtd = Convert.ToInt32(quantidade), qtFaz = Convert.ToInt32(quantosFaz);
+                decimal pago = Convert.ToDecimal(valorPago), frete = Convert.ToDecimal(valorFrete);
+                valorUnitario = Math.Round((((pago / qtd) + frete) / qtFaz), 2).ToString().Replace(".", ",");
+            }
+            return valorUnitario;
+        }
     }
 }
