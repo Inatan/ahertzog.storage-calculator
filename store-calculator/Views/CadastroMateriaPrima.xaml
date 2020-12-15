@@ -10,7 +10,7 @@
         <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.56,-3.467" Click="BtnSalvar_Click"/>
         <Button x:Name="btnCancelar" Content="Cancelar" Click="btnCancelar_Click" HorizontalAlignment="Left" Margin="165,281,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="21,19,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtNome"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtNome"/>
         <Label Content="Quantidade" HorizontalAlignment="Left" Margin="164,85,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtQuantidade"  PreviewTextInput="NumeroValidationQuantidade" HorizontalAlignment="Left" Height="23" Margin="164,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtQtd" KeyUp="TxtQuantidade_KeyUp"/>
         <Label Content="Valor Unitário" HorizontalAlignment="Left" Margin="164,209,0,0" VerticalAlignment="Top"/>

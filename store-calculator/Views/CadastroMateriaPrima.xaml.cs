@@ -76,8 +76,8 @@ namespace store_calculator.Views
                     Convert.ToInt32(txtQuantidade.Text),
                     Convert.ToInt32(txtQuantoFaz.Text),
                     Convert.ToDecimal(txtValorFrete.Text),
-                    Convert.ToDecimal(txtValorPago.Text),
-                0);
+                    Convert.ToDecimal(txtValorPago.Text)
+                );
             var handler = new CadastroMaterialHandler(_repo);
             handler.Execute(estoque);
         }

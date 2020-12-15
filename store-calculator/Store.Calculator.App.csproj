@@ -108,6 +108,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Store.Calculator.Infrastructure\Store.Calculator.Infrastructure.csproj">
+      <Project>{31cde9af-39dd-445a-8eee-2f55be168de2}</Project>
+      <Name>Store.Calculator.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Store.Calculator.Model\Store.Calculator.Model.csproj">
       <Project>{f1baa28c-d194-49b9-bb10-08867b518c0f}</Project>
       <Name>Store.Calculator.Model</Name>

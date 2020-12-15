@@ -140,3 +140,6 @@ C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calcula
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\obj\Debug\netcoreapp3.1\Store.Calculator.Tests.dll
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\obj\Debug\netcoreapp3.1\Store.Calculator.Tests.pdb
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\obj\Debug\netcoreapp3.1\Store.Calculator.Tests.genruntimeconfig.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator.test\bin\Debug\netcoreapp3.1\Moq.dll

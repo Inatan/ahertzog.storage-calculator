@@ -1,6 +1,8 @@
 ﻿using Store.Calculator.Infrastructure;
 using Store.Calculator.Model;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Store.Calculator.Services.Handlers
 {
@@ -26,6 +28,21 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                // _logger.LogError(ex, ex.Message);
+            }
+
+        }
+
+        public List<EstoqueMateriaPrima> Lista()
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                return _repo.ObtemMaterialEstoque().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                // _logger.LogError(ex, ex.Message);
             }
 
         }

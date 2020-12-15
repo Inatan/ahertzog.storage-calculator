@@ -12,5 +12,6 @@ namespace Store.Calculator.Infrastructure
 
         //Categoria ObtemMaterialPorId(int id);
         IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque(Func<EstoqueMateriaPrima, bool> filtro);
+        IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque();
     }
 }

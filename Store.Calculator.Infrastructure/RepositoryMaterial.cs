@@ -36,5 +36,10 @@ namespace Store.Calculator.Infrastructure
         {
             return _ctx.EstoqueMaterias.Where(filtro);
         }
+
+        public IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque()
+        {
+            return _ctx.EstoqueMaterias;
+        }
     }
 }

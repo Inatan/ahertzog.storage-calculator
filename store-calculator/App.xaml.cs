@@ -22,7 +22,7 @@ namespace store_calculator
 
         private void ComposeObjects()
         {
-            
+            Current.MainWindow = this.container.Get<MainWindow>();
         }
 
         private void ConfigureContainer()
