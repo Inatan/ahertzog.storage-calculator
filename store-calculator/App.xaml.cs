@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Ninject;
+using Store.Calculator.Infrastructure;
+using System;
 using System.Windows;
 
 namespace store_calculator
@@ -13,5 +10,25 @@ namespace store_calculator
     /// </summary>
     public partial class App : Application
     {
+        private IKernel container;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            ConfigureContainer();
+            ComposeObjects();
+            Current.MainWindow.Show();
+        }
+
+        private void ComposeObjects()
+        {
+            
+        }
+
+        private void ConfigureContainer()
+        {
+            container = new StandardKernel();
+            container.Bind<IRepositoryMaterial>().To<RepositoryMaterial>().InTransientScope();
+        }
     }
 }

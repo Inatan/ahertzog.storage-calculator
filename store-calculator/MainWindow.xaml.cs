@@ -1,4 +1,5 @@
-﻿using store_calculator.Views;
+﻿using Store.Calculator.Infrastructure;
+using store_calculator.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,17 @@ namespace store_calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        private readonly IRepositoryMaterial _repo;
+        public MainWindow(IRepositoryMaterial repo)
         {
+            _repo = repo;
             InitializeComponent();
         }
 
         private void BtnCadastro_Click(object sender, RoutedEventArgs e)
         {
-            CadastroMateriaPrima tela = new CadastroMateriaPrima();
+            CadastroMateriaPrima tela = new CadastroMateriaPrima(_repo);
             tela.ShowDialog();
         }
 

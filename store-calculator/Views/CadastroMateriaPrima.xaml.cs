@@ -1,7 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
+using Store.Calculator.Infrastructure;
 using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
+using Store.Calculator.Services.Handlers;
 
 namespace store_calculator.Views
 {
@@ -10,8 +13,11 @@ namespace store_calculator.Views
     /// </summary>
     public partial class CadastroMateriaPrima : Window
     {
-        public CadastroMateriaPrima()
+        private readonly IRepositoryMaterial _repo;
+
+        public CadastroMateriaPrima(IRepositoryMaterial repo)
         {
+            _repo = repo;
             InitializeComponent();
         }
 
@@ -63,7 +69,17 @@ namespace store_calculator.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-
+            EstoqueMateriaPrima estoque = 
+                new EstoqueMateriaPrima(
+                    txtNome.Text,
+                    txtUnidadeMedida.Text,
+                    Convert.ToInt32(txtQuantidade.Text),
+                    Convert.ToInt32(txtQuantoFaz.Text),
+                    Convert.ToDecimal(txtValorFrete.Text),
+                    Convert.ToDecimal(txtValorPago.Text),
+                0);
+            var handler = new CadastroMaterialHandler(_repo);
+            handler.Execute(estoque);
         }
     }
 }

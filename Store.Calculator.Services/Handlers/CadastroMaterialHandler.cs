@@ -1,4 +1,5 @@
 ﻿using Store.Calculator.Infrastructure;
+using Store.Calculator.Model;
 using System;
 
 namespace Store.Calculator.Services.Handlers
@@ -14,30 +15,19 @@ namespace Store.Calculator.Services.Handlers
             _repo = repo;
         }
 
-        //public void Execute(CadastraTarefa comando)
-        //{
-        //    try
-        //    {
-        //        var tarefa = new Tarefa
-        //        (
-        //            id: 0,
-        //            titulo: comando.Titulo,
-        //            prazo: comando.Prazo,
-        //            categoria: comando.Categoria,
-        //            concluidaEm: null,
-        //            status: StatusTarefa.Criada
-        //        );
-        //        _logger.LogDebug("Persistindo a tarefa...");
-        //        _repo.IncluirTarefas(tarefa);
-        //        return new CommandResult(true);
+        public void Execute(EstoqueMateriaPrima comando)
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                _repo.IncluirMaterialEstoque(comando);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, ex.Message);
-        //        return new CommandResult(false);
-        //    }
+            }
+            catch (Exception ex)
+            {
+               // _logger.LogError(ex, ex.Message);
+            }
 
-        //}
+        }
     }
 }
