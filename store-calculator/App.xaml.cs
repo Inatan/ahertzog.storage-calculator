@@ -15,22 +15,25 @@ namespace Store.Calculator.App
     {
         public IServiceProvider ServiceProvider { get; private set; }
 
+        public App()
+        {
+            ServiceCollection services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider = services.BuildServiceProvider();
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            ServiceCollection services = new ServiceCollection();
-            ConfigureServices(services);
-            ServiceProvider = services.BuildServiceProvider();
-
-            Current.MainWindow = ServiceProvider.GetService<MenuInicial>();
-            Current.MainWindow.Show();
+            var menu = ServiceProvider.GetService<MenuInicial>();
+            menu.Show();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
             services.AddDbContext<DbEstoqueContext>();
+            services.AddSingleton<MenuInicial>();
         }
     }
       

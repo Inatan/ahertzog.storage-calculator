@@ -13,8 +13,8 @@ namespace Store.Calculator.App.Views
         private readonly IRepositoryMaterial _repo;
         public MenuInicial(IRepositoryMaterial repo)
         {
-            _repo = repo;
             InitializeComponent();
+            _repo = repo;
         }
 
         private void BtnCadastro_Click(object sender, RoutedEventArgs e)
