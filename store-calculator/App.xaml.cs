@@ -1,7 +1,8 @@
-﻿using Ninject;
-using Store.Calculator.App.Views;
+﻿using Store.Calculator.App.Views;
 using Store.Calculator.Infrastructure;
 using Store.Calculator.Infrastructure.Seeding;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Windows;
 
 namespace Store.Calculator.App
@@ -11,26 +12,24 @@ namespace Store.Calculator.App
     /// </summary>
     public partial class App : Application
     {
-        private IKernel container;
+        public IServiceProvider ServiceProvider { get; private set; }
+
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            ConfigureContainer();
-            ComposeObjects();
-            DatabaseGenerator.Seed();
+            ServiceCollection services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider = services.BuildServiceProvider();
+
+            Current.MainWindow = ServiceProvider.GetService<MenuInicial>();
             Current.MainWindow.Show();
         }
 
-        private void ComposeObjects()
+        public void ConfigureServices(IServiceCollection services)
         {
-            Current.MainWindow = this.container.Get<MenuInicial>();
-        }
-
-        private void ConfigureContainer()
-        {
-            container = new StandardKernel();
-            container.Bind<IRepositoryMaterial>().To<RepositoryMaterial>().InTransientScope();
+            services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
         }
     }
+      
 }

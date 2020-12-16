@@ -1,11 +1,11 @@
-C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Model.dll
-C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.csprojAssemblyReference.cache
-C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.AssemblyInfo.cs
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Infrastructure.deps.json
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Infrastructure.dll
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Infrastructure.pdb
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Model.dll
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\bin\Debug\netstandard2.0\Store.Calculator.Model.pdb
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.csprojAssemblyReference.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.AssemblyInfo.cs
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.csproj.CopyComplete
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\Store.Calculator.Infrastructure\obj\Debug\netstandard2.0\Store.Calculator.Infrastructure.dll
