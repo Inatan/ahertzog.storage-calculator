@@ -6,7 +6,7 @@ using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services.Handlers;
 
-namespace store_calculator.Views
+namespace Store.Calculator.App.Views
 {
     /// <summary>
     /// Lógica interna para CadastroMateriaPrima.xaml

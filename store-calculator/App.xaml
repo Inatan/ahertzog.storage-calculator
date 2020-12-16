@@ -1,7 +1,7 @@
-﻿<Application x:Class="store_calculator.App"
+﻿<Application x:Class="Store.Calculator.App.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:store_calculator"
+             xmlns:local="clr-namespace:Store.Calculator.App"
              ><!--StartupUri="MainWindow.xaml"-->
     <Application.Resources>
          
