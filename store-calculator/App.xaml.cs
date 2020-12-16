@@ -1,5 +1,6 @@
 ﻿using Store.Calculator.App.Views;
 using Store.Calculator.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Store.Calculator.Infrastructure.Seeding;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,6 +30,7 @@ namespace Store.Calculator.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
+            services.AddDbContext<DbEstoqueContext>();
         }
     }
       
