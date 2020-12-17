@@ -21,6 +21,12 @@ namespace Store.Calculator.App.Views
             tela.ShowDialog();
         }
 
+        private void BtnOrcamento_Click(object sender, RoutedEventArgs e)
+        {
+            Orcamento tela = new Orcamento(_handler);
+            tela.ShowDialog();
+        }
+
         private void BtnFechar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

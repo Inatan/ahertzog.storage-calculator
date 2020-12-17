@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App"
         mc:Ignorable="d"
-        Title="Início" Height="106" Width="206">
+        Title="Início" Height="142" Width="206">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Click="BtnCadastro_Click"  Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="178"/>
-        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button Click="BtnOrcamento_Click"  Content="Realizar Orçamento" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="178"/>
     </Grid>
 </Window>
