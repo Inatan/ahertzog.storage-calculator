@@ -16,6 +16,7 @@ namespace Store.Calculator.App
         IServiceProvider ServiceProvider;
         public App()
         {
+            DatabaseGenerator.Seed();
             ServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
             ServiceProvider = services.BuildServiceProvider();
@@ -24,6 +25,7 @@ namespace Store.Calculator.App
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            
             var menu = ServiceProvider.GetService<MenuInicial>();
             menu.Show();
         }
@@ -31,8 +33,7 @@ namespace Store.Calculator.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
-            services.AddDbContext<DbEstoqueContext>(
-                options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true"));
+            services.AddDbContext<DbEstoqueContext>(); //options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true")
             services.AddSingleton<MenuInicial>();
         }
     }

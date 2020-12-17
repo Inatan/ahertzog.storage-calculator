@@ -7,20 +7,16 @@ namespace Store.Calculator.Infrastructure
     {
         public DbSet<EstoqueMateriaPrima> EstoqueMaterias { get; set; }
 
-        public DbEstoqueContext(DbContextOptions<DbEstoqueContext> options): base(options)
-        {
-            
-        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //if (!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured)
                 optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true");
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<EstoqueMateriaPrima>();
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<EstoqueMateriaPrima>();
+        //}
 
     }
 }
