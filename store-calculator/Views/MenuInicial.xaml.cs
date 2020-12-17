@@ -1,5 +1,4 @@
-﻿using Store.Calculator.Infrastructure;
-using Store.Calculator.Services.Handlers;
+﻿using Store.Calculator.Services.Handlers;
 using System.Windows;
 
 namespace Store.Calculator.App.Views
