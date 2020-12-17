@@ -8,13 +8,13 @@ namespace Store.Calculator.Infrastructure.Seeding
     {
         public static void Seed()
         {
-            using (var ctx = new DbEstoqueContext())
-            {
-                if (ctx.Database.EnsureCreated())
-                {
+            //using (var ctx = new DbEstoqueContext())
+            //{
+            //    if (ctx.Database.EnsureCreated())
+            //    {
                 
-                }
-            }
+            //    }
+            //}
         }
     }
 }

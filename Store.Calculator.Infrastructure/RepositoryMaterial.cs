@@ -39,7 +39,12 @@ namespace Store.Calculator.Infrastructure
 
         public IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque()
         {
-            return _ctx.EstoqueMaterias;
+            if (_ctx.Database.EnsureCreated())
+            {
+                return _ctx.EstoqueMaterias;
+            }
+            else
+                return null;
         }
     }
 }

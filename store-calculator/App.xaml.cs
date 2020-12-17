@@ -13,8 +13,7 @@ namespace Store.Calculator.App
     /// </summary>
     public partial class App : Application
     {
-        public IServiceProvider ServiceProvider { get; private set; }
-
+        IServiceProvider ServiceProvider;
         public App()
         {
             ServiceCollection services = new ServiceCollection();
@@ -32,7 +31,8 @@ namespace Store.Calculator.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
-            services.AddDbContext<DbEstoqueContext>();
+            services.AddDbContext<DbEstoqueContext>(
+                options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true"));
             services.AddSingleton<MenuInicial>();
         }
     }
