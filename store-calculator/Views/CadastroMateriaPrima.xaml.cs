@@ -80,6 +80,8 @@ namespace Store.Calculator.App.Views
                 );
             var handler = new CadastroMaterialHandler(_repo);
             handler.Execute(estoque);
+            MessageBoxResult result = MessageBox.Show("Produto Cadastrado com Sucesso!", "Sucesso", MessageBoxButton.OK,MessageBoxImage.Asterisk);
+            this.Close();
         }
     }
 }

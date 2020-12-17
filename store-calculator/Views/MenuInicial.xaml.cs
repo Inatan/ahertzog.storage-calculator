@@ -18,7 +18,6 @@ namespace Store.Calculator.App.Views
 
         private void BtnCadastro_Click(object sender, RoutedEventArgs e)
         {
-            _repo.ObtemMaterialEstoque();
             CadastroMateriaPrima tela = new CadastroMateriaPrima(_repo);
             tela.ShowDialog();
         }
