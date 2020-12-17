@@ -33,7 +33,7 @@ namespace Store.Calculator.App
         {
             services.AddTransient<IRepositoryMaterial, RepositoryMaterial>();
             services.AddTransient<ICadastroMaterialHandler, CadastroMaterialHandler>();
-            services.AddDbContext<DbEstoqueContext>(); //options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true")
+            services.AddDbContext<DbEstoqueContext>();
             services.AddSingleton<MenuInicial>();
         }
     }
