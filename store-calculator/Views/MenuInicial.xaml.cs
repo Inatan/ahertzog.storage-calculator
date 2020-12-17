@@ -1,4 +1,5 @@
 ﻿using Store.Calculator.Infrastructure;
+using Store.Calculator.Services.Handlers;
 using System.Windows;
 
 namespace Store.Calculator.App.Views
@@ -8,17 +9,16 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class MenuInicial : Window
     {
-
-        IRepositoryMaterial _repo;
-        public MenuInicial(IRepositoryMaterial repo)
+        private readonly ICadastroMaterialHandler _handler;
+        public MenuInicial(ICadastroMaterialHandler handler)
         {
-            _repo = repo;
+            _handler = handler;
             InitializeComponent();
         }
 
         private void BtnCadastro_Click(object sender, RoutedEventArgs e)
         {
-            CadastroMateriaPrima tela = new CadastroMateriaPrima(_repo);
+            CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
             tela.ShowDialog();
         }
 

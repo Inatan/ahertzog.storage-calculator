@@ -33,7 +33,7 @@ namespace Store.Calculator.Tests
             var handler = new CadastroMaterialHandler(repo);
 
             //assert
-            var lista = handler.Lista();
+            var lista = handler.Listar();
             Assert.Equal(3, lista.Count);
         }
 

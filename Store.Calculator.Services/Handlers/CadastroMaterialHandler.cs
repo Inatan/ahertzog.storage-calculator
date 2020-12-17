@@ -8,7 +8,7 @@ namespace Store.Calculator.Services.Handlers
 {
 
 
-    public class CadastroMaterialHandler
+    public class CadastroMaterialHandler : ICadastroMaterialHandler
     {
         IRepositoryMaterial _repo;
 
@@ -32,7 +32,7 @@ namespace Store.Calculator.Services.Handlers
 
         }
 
-        public List<EstoqueMateriaPrima> Lista()
+        public List<EstoqueMateriaPrima> Listar()
         {
             try
             {

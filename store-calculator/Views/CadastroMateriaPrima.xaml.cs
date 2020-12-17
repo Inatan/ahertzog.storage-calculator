@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Store.Calculator.Infrastructure;
 using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
+using Store.Calculator.Services;
 using Store.Calculator.Services.Handlers;
 
 namespace Store.Calculator.App.Views
@@ -13,11 +14,11 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class CadastroMateriaPrima : Window
     {
-        private readonly IRepositoryMaterial _repo;
+        private readonly ICadastroMaterialHandler _handler;
 
-        public CadastroMateriaPrima(IRepositoryMaterial repo)
+        public CadastroMateriaPrima(ICadastroMaterialHandler handler)
         {
-            _repo = repo;
+            _handler = handler;
             InitializeComponent();
         }
 
@@ -78,9 +79,8 @@ namespace Store.Calculator.App.Views
                     Convert.ToDecimal(txtValorFrete.Text),
                     Convert.ToDecimal(txtValorPago.Text)
                 );
-            var handler = new CadastroMaterialHandler(_repo);
-            handler.Execute(estoque);
-            MessageBoxResult result = MessageBox.Show("Produto Cadastrado com Sucesso!", "Sucesso", MessageBoxButton.OK,MessageBoxImage.Asterisk);
+            _handler.Execute(estoque);
+            MessageBox.Show("Produto Cadastrado com Sucesso!", "Sucesso", MessageBoxButton.OK,MessageBoxImage.Asterisk);
             this.Close();
         }
     }
