@@ -46,28 +46,28 @@ namespace Store.Calculator.App.Views
         }
         private void TextInputValorFrete(object sender, TextCompositionEventArgs e)
         {
-            txtValorUnidade.Text = EstoqueMateriaPrima.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtValorFrete_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = EstoqueMateriaPrima.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtQuantoFaz_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = EstoqueMateriaPrima.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtQuantidade_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = EstoqueMateriaPrima.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            EstoqueMateriaPrima estoque = 
-                new EstoqueMateriaPrima(
+            Model.Material estoque = 
+                new Model.Material(
                     txtNome.Text,
                     txtUnidadeMedida.Text,
                     Convert.ToInt32(txtQuantidade.Text),

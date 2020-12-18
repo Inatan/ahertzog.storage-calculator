@@ -2,7 +2,6 @@
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services.Handlers;
 using System;
-using System.Data;
 using System.Windows;
 using System.Windows.Input;
 
@@ -14,12 +13,8 @@ namespace Store.Calculator.App.Views
     public partial class SelecaoMaterial : Window
     {
         private readonly ICadastroMaterialHandler _handler;
-        public string Nome { get; private set; }
-        public string Unidade { get; private set; }
-        public string Preco { get; private set; }
-        public string Quantidade { get; private set; }
-        public string Total { get; private set; }
 
+        public ConsumoMaterial consumo {get; private set;}
 
         public SelecaoMaterial(ICadastroMaterialHandler handler)
         {
@@ -27,6 +22,7 @@ namespace Store.Calculator.App.Views
             InitializeComponent();
             var materiais = handler.Listar();
             dataGridClientes.ItemsSource = materiais;
+            
         }
 
         private void txtQuantidade_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -42,12 +38,8 @@ namespace Store.Calculator.App.Views
                 AppUtils.MensagemErro("Falha nenhum a quantidade selecionada deve ser maior que 0");
             else
             {
-                EstoqueMateriaPrima material = (EstoqueMateriaPrima)dataGridClientes.SelectedItem;
-                Nome = material.Nome;
-                Unidade = material.Unidade;
-                Preco = material.TotalFinal.ToString();
-                Quantidade = txtQuantidade.Text;
-                Total = (material.TotalFinal * Convert.ToDecimal(txtQuantidade.Text.Replace(",", "."))).ToString();
+                Material material = (Material)dataGridClientes.SelectedItem;
+                consumo = new ConsumoMaterial(material, Convert.ToDecimal(txtQuantidade.Text, AppUtils.cultureInfo) );
                 DialogResult = true;
                 Close();
             }

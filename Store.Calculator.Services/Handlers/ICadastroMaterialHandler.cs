@@ -5,8 +5,8 @@ namespace Store.Calculator.Services.Handlers
 {
     public interface ICadastroMaterialHandler
     {
-        void Execute(EstoqueMateriaPrima comando);
+        void Execute(Material comando);
 
-        List<EstoqueMateriaPrima> Listar();
+        List<Material> Listar();
     }
 }

@@ -6,12 +6,12 @@ namespace Store.Calculator.Infrastructure
 {
     public interface IRepositoryMaterial
     {
-        void IncluirMaterialEstoque(params EstoqueMateriaPrima[] materias);
-        void AtualizarMaterialEstoque(params EstoqueMateriaPrima[] materias);
-        void ExcluirMaterialEstoque(params EstoqueMateriaPrima[] materias);
+        void IncluirMaterialEstoque(params Material[] materias);
+        void AtualizarMaterialEstoque(params Material[] materias);
+        void ExcluirMaterialEstoque(params Material[] materias);
 
         //Categoria ObtemMaterialPorId(int id);
-        IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque(Func<EstoqueMateriaPrima, bool> filtro);
-        IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque();
+        IEnumerable<Material> ObtemMaterialEstoque(Func<Material, bool> filtro);
+        IEnumerable<Material> ObtemMaterialEstoque();
     }
 }

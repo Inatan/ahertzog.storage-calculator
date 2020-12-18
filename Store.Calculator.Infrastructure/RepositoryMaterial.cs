@@ -14,30 +14,30 @@ namespace Store.Calculator.Infrastructure
             _ctx = ctx;
         }
 
-        public void AtualizarMaterialEstoque(params EstoqueMateriaPrima[] materias)
+        public void AtualizarMaterialEstoque(params Material[] materias)
         {
             _ctx.EstoqueMaterias.UpdateRange(materias);
             _ctx.SaveChanges();
         }
 
-        public void ExcluirMaterialEstoque(params EstoqueMateriaPrima[] materias)
+        public void ExcluirMaterialEstoque(params Material[] materias)
         {
             _ctx.EstoqueMaterias.RemoveRange(materias);
             _ctx.SaveChanges();
         }
 
-        public void IncluirMaterialEstoque(params EstoqueMateriaPrima[] materias)
+        public void IncluirMaterialEstoque(params Material[] materias)
         {
             _ctx.EstoqueMaterias.AddRange(materias);
             _ctx.SaveChanges();
         }
 
-        public IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque(Func<EstoqueMateriaPrima, bool> filtro)
+        public IEnumerable<Material> ObtemMaterialEstoque(Func<Material, bool> filtro)
         {
             return _ctx.EstoqueMaterias.Where(filtro);
         }
 
-        public IEnumerable<EstoqueMateriaPrima> ObtemMaterialEstoque()
+        public IEnumerable<Material> ObtemMaterialEstoque()
         {
             return _ctx.EstoqueMaterias;
         }

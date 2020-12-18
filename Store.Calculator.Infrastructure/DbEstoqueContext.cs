@@ -5,7 +5,7 @@ namespace Store.Calculator.Infrastructure
 {
     public class DbEstoqueContext : DbContext
     {
-        public DbSet<EstoqueMateriaPrima> EstoqueMaterias { get; set; }
+        public DbSet<Material> EstoqueMaterias { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

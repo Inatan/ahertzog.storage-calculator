@@ -14,7 +14,7 @@ namespace Store.Calculator.Tests
         {
             //arrange
             //act
-            string retorno = EstoqueMateriaPrima.CalculaValorUnitario(quantidade, quantosFaz, valorPago, valorFrete);
+            string retorno = Material.CalculaValorUnitario(quantidade, quantosFaz, valorPago, valorFrete);
 
             //assert
             Assert.Equal(valorEsperado, retorno);

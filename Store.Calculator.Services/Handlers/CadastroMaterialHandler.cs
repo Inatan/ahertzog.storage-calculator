@@ -17,7 +17,7 @@ namespace Store.Calculator.Services.Handlers
             _repo = repo;
         }
 
-        public void Execute(EstoqueMateriaPrima comando)
+        public void Execute(Material comando)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Store.Calculator.Services.Handlers
 
         }
 
-        public List<EstoqueMateriaPrima> Listar()
+        public List<Material> Listar()
         {
             try
             {

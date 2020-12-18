@@ -14,11 +14,11 @@ namespace Store.Calculator.Tests
         [Fact]
         void DadoItensParaCadastroDeveSerAdicionadosEmBanco()
         {
-            var materiais = new List<EstoqueMateriaPrima>
+            var materiais = new List<Material>
             {
-                new EstoqueMateriaPrima("Navalha","UN",1,1,10.5M,10.5M),
-                new EstoqueMateriaPrima("Linha","UN",12,1,1.5M,0.5M),
-                new EstoqueMateriaPrima("Papel","g",300,1,10M,4M),
+                new Material("Navalha","UN",1,1,10.5M,10.5M),
+                new Material("Linha","UN",12,1,1.5M,0.5M),
+                new Material("Papel","g",300,1,10M,4M),
             };
 
             var options = new DbContextOptionsBuilder<DbEstoqueContext>()
