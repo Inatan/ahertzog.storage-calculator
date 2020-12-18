@@ -14,27 +14,28 @@
 
         </Grid.ColumnDefinitions>
 
-        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" FontSize="30" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="7"/>
+                    <Setter Property="CornerRadius" Value="30"/>
 
 
                     <!--FEAFC4-->
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" FontSize="30" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="7"/>
+                    <Setter Property="CornerRadius" Value="30"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="7"/>
+                    <Setter Property="CornerRadius" Value="30"/>
+                    
                 </Style>
             </Button.Resources>
         </Button>
