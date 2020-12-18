@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Threading;
 using System.Windows;
 
@@ -15,6 +16,11 @@ namespace Store.Calculator.App
                 Thread.CurrentThread.CurrentCulture = cultureInfo;
                 return cultureInfo;
             }
+        }
+
+        public static string FormatCurrency(decimal value)
+        {
+            return "R$ " + String.Format(cultureInfo, "{0:C}", value);
         }
 
         public static void MensagemErro(string message, string title = "Erro")

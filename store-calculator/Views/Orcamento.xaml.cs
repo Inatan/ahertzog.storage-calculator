@@ -43,7 +43,7 @@ namespace Store.Calculator.App.Views
             decimal totalCel= Convert.ToDecimal(total, AppUtils.cultureInfo);
             totalPayment += totalCel;
 
-            string totalTable = $"Total: R$ {String.Format(AppUtils.cultureInfo, "{0:C}", totalPayment)}";
+            string totalTable = $"Total: {AppUtils.FormatCurrency(totalPayment)}";
             Paragraph paragraphFooter = new Paragraph(new Run(totalTable));
             paragraphFooter.FontSize = 20;
             paragraphFooter.TextAlignment = TextAlignment.Right;

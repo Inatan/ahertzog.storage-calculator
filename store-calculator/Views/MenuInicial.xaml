@@ -6,13 +6,40 @@
         xmlns:local="clr-namespace:Store.Calculator.App"
         Background="#fcdfe6"
         mc:Ignorable="d"
-        Title="Início" Height="142" Width="206">
+        Title="Início" Height="768" Width="1366" Left="0" Top="0">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
-        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="178"/>
-        <Button Click="BtnOrcamento_Click"  Content="Realizar Orçamento" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="178"/>
-        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="178"/>
+
+        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+
+
+                    <!--FEAFC4-->
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="695" Margin="20,20,0,0" VerticalAlignment="Top" Width="805" Source="/res/logo.jpeg">
+
+        </Image>
     </Grid>
 </Window>
