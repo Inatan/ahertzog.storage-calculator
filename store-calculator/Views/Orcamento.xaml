@@ -48,18 +48,6 @@
                             </TableCell>
                         </TableRow>
 
-                      
-
-                        <TableRow>
-                            <TableCell ColumnSpan="4">
-                                <Paragraph FontSize="10pt" FontWeight="Bold" >
-                                    <InlineUIContainer>
-                                        <TextBlock x:Name="FooterText"></TextBlock>
-                                    </InlineUIContainer>
-                                </Paragraph>
-                            </TableCell>
-                        </TableRow>
-
                     </TableRowGroup>
                 </Table>
             </FlowDocument>
