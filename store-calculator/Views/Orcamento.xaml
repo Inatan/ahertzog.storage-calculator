@@ -17,6 +17,7 @@
                         <TableColumn/>
                         <TableColumn/>
                         <TableColumn/>
+                        <TableColumn/>
                     </Table.Columns>
 
                     <TableRowGroup x:Name="TableRowValor">
@@ -32,6 +33,9 @@
                         <TableRow Background="LightGoldenrodYellow">
                             <TableCell>
                                 <Paragraph FontSize="14pt" FontWeight="Bold">Nome</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontSize="14pt" FontWeight="Bold">Unidade</Paragraph>
                             </TableCell>
                             <TableCell>
                                 <Paragraph FontSize="14pt" FontWeight="Bold">Valor</Paragraph>
@@ -60,7 +64,7 @@
                 </Table>
             </FlowDocument>
         </FlowDocumentReader>
-        <Button x:Name="BtnAdicionarProduto" Content="Adicinar Porduto" HorizontalAlignment="Left" Margin="25,555,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="BtnAdicionarProduto" Click="BtnAdicionarProduto_Click" Content="Adicinar Porduto" HorizontalAlignment="Left" Margin="25,555,0,0" VerticalAlignment="Top" Width="115"/>
         <Button x:Name="BtnGerarOrcamento" Content="Gerar Orcamento" HorizontalAlignment="Left" Margin="160,555,0,0" VerticalAlignment="Top" Width="115"/>
         <Button x:Name="BtnSelecionarTempo" Content="Tempo de trabalho" HorizontalAlignment="Left" Margin="300,555,0,0" VerticalAlignment="Top" Width="115"/>
 

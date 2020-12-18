@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using Store.Calculator.Infrastructure;
 using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
-using Store.Calculator.Services;
 using Store.Calculator.Services.Handlers;
 
 namespace Store.Calculator.App.Views
@@ -42,12 +40,10 @@ namespace Store.Calculator.App.Views
             e.Handled = EventsUtils.ValidaNumero(txtQuantoFaz.Text, e.Text);
         }
 
-
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void TextInputValorFrete(object sender, TextCompositionEventArgs e)
         {
             txtValorUnidade.Text = EstoqueMateriaPrima.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);

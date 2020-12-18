@@ -16,22 +16,28 @@ namespace Store.Calculator.App.Views
         {
             _handler = handler;
             InitializeComponent();
-            atualizaTabela();
         }
 
-        private void atualizaTabela()
+        private void AtualizaTabela(string nome, string unidade, string preco, string quantidade, string total )
         {
-            for (int i = 0; i < 5; i++)
-            {
-                TableRow tableRow = new TableRow();
-                TableRowValor.Rows.Add(tableRow);
-                if(TableRowValor.Rows.Count % 2 == 1)
-                    tableRow.Background = Brushes.LightGray;
+            TableRow tableRow = new TableRow();
+            TableRowValor.Rows.Add(tableRow);
+            if(TableRowValor.Rows.Count % 2 == 1)
+                tableRow.Background = Brushes.LightGray;
 
-                tableRow.Cells.Add(new TableCell(new Paragraph(new Run("2004 Sales Project"))));
-                tableRow.Cells.Add(new TableCell(new Paragraph(new Run("2004 Sales Project"))));
-                tableRow.Cells.Add(new TableCell(new Paragraph(new Run("2004 Sales Project"))));
-                tableRow.Cells.Add(new TableCell(new Paragraph(new Run("2004 Sales Project"))));
+            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(nome))));
+            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(unidade))));
+            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(preco))));
+            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(quantidade))));
+            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(total))));
+        }
+
+        private void BtnAdicionarProduto_Click(object sender, RoutedEventArgs e)
+        {
+            SelecaoMaterial tela = new SelecaoMaterial(_handler);
+            if(tela.ShowDialog() == true)
+            {
+                AtualizaTabela(tela.Nome, tela.Unidade,tela.Preco,tela.Quantidade,tela.Total);
             }
         }
     }
