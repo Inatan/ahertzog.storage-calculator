@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Orcamento" Height="632" Width="1024">
     <Grid>
-        <FlowDocumentReader Margin="195,10,196,121" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <FlowDocumentReader Margin="195,10,196,121">
             <FlowDocument>
 
                 <Table x:Name="TableValores" CellSpacing="5">
@@ -50,15 +50,15 @@
 
                       
 
-                        <!--<TableRow>
+                        <TableRow>
                             <TableCell ColumnSpan="4">
-                                <Paragraph FontSize="10pt" FontStyle="Italic">
-                                    Information from the
-                                    <Hyperlink NavigateUri="http://encarta.msn.com/encnet/refpages/artcenter.aspx">Encarta</Hyperlink>
-                                    web site.
+                                <Paragraph FontSize="10pt" FontWeight="Bold" >
+                                    <InlineUIContainer>
+                                        <TextBlock x:Name="FooterText"></TextBlock>
+                                    </InlineUIContainer>
                                 </Paragraph>
                             </TableCell>
-                        </TableRow>-->
+                        </TableRow>
 
                     </TableRowGroup>
                 </Table>

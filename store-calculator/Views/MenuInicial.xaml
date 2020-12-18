@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App"
+        Background="#fcdfe6"
         mc:Ignorable="d"
         Title="Início" Height="142" Width="206">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="BtnCadastro_Click"  Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="178"/>
         <Button Click="BtnOrcamento_Click"  Content="Realizar Orçamento" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="178"/>
         <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="178"/>
     </Grid>

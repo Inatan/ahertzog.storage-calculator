@@ -1,4 +1,5 @@
 ﻿using Store.Calculator.Services.Handlers;
+using System;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -30,6 +31,13 @@ namespace Store.Calculator.App.Views
             tableRow.Cells.Add(new TableCell(new Paragraph(new Run(preco))));
             tableRow.Cells.Add(new TableCell(new Paragraph(new Run(quantidade))));
             tableRow.Cells.Add(new TableCell(new Paragraph(new Run(total))));
+
+            decimal totalTable = Convert.ToDecimal(total);
+            if (FooterText.Text != string.Empty)
+            {
+                totalTable = Convert.ToDecimal(FooterText.Text.Replace(",", ".").Replace("Total: ", "")) + totalTable;
+            }
+            FooterText.Text = $"Total: {totalTable}";
         }
 
         private void BtnAdicionarProduto_Click(object sender, RoutedEventArgs e)
