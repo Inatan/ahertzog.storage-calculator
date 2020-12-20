@@ -28,7 +28,7 @@
             </DataGrid.CellStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do cliente" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do Material" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Unidade}" Header="Unidade de medida" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding TotalUnitarioFinal}" Header="Valor" Width="*"/>
             </DataGrid.Columns>
