@@ -1,4 +1,5 @@
 ﻿using Store.Calculator.Model;
+using Store.Calculator.Model.Utils;
 using Store.Calculator.Services.Handlers;
 using System;
 using System.Windows;
@@ -61,6 +62,10 @@ namespace Store.Calculator.App.Views
                 AtualizaTabela(tela.consumo);
             }
         }
-       
+
+        private void txtTempo_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = EventsUtils.ValidaTempo(txtTempo.Text, e.Text);
+        }
     }
 }

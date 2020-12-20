@@ -5,7 +5,20 @@ namespace Store.Calculator.Infrastructure
 {
     public class DbEstoqueContext : DbContext
     {
+
+        public DbEstoqueContext(): base()
+        {
+
+        }
+
+        public DbEstoqueContext(DbContextOptions<DbEstoqueContext> options) :base(options)
+        {
+        }
+
         public DbSet<Material> EstoqueMaterias { get; set; }
+        public DbContextOptions<DbEstoqueContext> Options { get; }
+
+        //public DbSet<ValorTempo> valorTempo { get; set  }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

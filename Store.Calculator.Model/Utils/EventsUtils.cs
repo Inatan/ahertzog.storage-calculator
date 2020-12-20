@@ -28,5 +28,13 @@ namespace Store.Calculator.Model.Utils
             Regex regex = new Regex("[0-9]");
             return !regex.IsMatch(digito);
         }
+
+        public static bool ValidaTempo(string texto, string digito)
+        {
+            Regex regex = new Regex("^(?:(?:[01]?[0-9]|2[0-3])(?::(?:[0-5][0-9]?)?)?)?$");
+
+
+            return !regex.IsMatch(texto+digito);
+        }
     }
 }

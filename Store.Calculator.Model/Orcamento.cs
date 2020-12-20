@@ -6,20 +6,26 @@ namespace Store.Calculator.Model
 {
     public class Orcamento
     {
-        public string Nome { get; set; }
-        public IList<ConsumoMaterial> MateriasPrima { get; set; }
-        //public Decimal ValorTotal { get { return (Decimal)MateriasPrima.Select(m => m.Total).ToList().Sum(); } }
-
-        public Orcamento()
+        public Orcamento(TimeSpan tempoEstimado, IList<ConsumoMaterial> materiasPrima)
         {
-            Nome = String.Empty;
-            MateriasPrima = new List<ConsumoMaterial>();
+            this.TempoEstimado = tempoEstimado;
+            MateriasPrima = materiasPrima;
         }
 
-        public Orcamento(string nome, IList<ConsumoMaterial> materiasPrima)
+        public TimeSpan TempoEstimado { get; set; }
+        public IList<ConsumoMaterial> MateriasPrima { get; set; }
+
+        public decimal Total {
+            get
+            {
+                return  MateriasPrima.Sum(m => m.Total) + ((decimal)TempoEstimado.TotalHours * BuscaValorHora());
+            }
+        }
+
+
+        private decimal BuscaValorHora()
         {
-            Nome = nome;
-            MateriasPrima = materiasPrima;
+            return 16.00M;
         }
     }
 }

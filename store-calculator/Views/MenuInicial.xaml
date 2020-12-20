@@ -18,8 +18,6 @@
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
-
-
                     <!--FEAFC4-->
                 </Style>
             </Button.Resources>

@@ -15,14 +15,13 @@ namespace Store.Calculator.App.Views
         private readonly ICadastroMaterialHandler _handler;
 
         public ConsumoMaterial consumo {get; private set;}
-
+        
         public SelecaoMaterial(ICadastroMaterialHandler handler)
         {
             _handler = handler;
             InitializeComponent();
             var materiais = handler.Listar();
-            dataGridClientes.ItemsSource = materiais;
-            
+            dataGridProdutos.ItemsSource = materiais;
         }
 
         private void txtQuantidade_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -32,18 +31,26 @@ namespace Store.Calculator.App.Views
 
         private void btnSelecionar_Click(object sender, RoutedEventArgs e)
         {
-            if (dataGridClientes.SelectedItem == null)
+            if (dataGridProdutos.SelectedItem == null)
                 AppUtils.MensagemErro("Falha nenhum material foi seleciona");
             else if (string.IsNullOrEmpty(txtQuantidade.Text) ||  Convert.ToInt32(txtQuantidade.Text) < 1)
                 AppUtils.MensagemErro("Falha nenhum a quantidade selecionada deve ser maior que 0");
             else
             {
-                Material material = (Material)dataGridClientes.SelectedItem;
+                Material material = (Material)dataGridProdutos.SelectedItem;
                 consumo = new ConsumoMaterial(material, Convert.ToDecimal(txtQuantidade.Text, AppUtils.cultureInfo) );
                 DialogResult = true;
                 Close();
             }
+        }
 
+        private void txtPesquisa_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            dataGridProdutos.Items.Filter = (obj) =>
+            {
+                Material material = obj as Material;
+                return material.Nome.ToLower().Contains(txtPesquisa.Text.Trim().ToLower());
+            };
         }
     }
 }

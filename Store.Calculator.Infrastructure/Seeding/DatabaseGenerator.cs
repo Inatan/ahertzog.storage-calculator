@@ -7,8 +7,8 @@
             using (var ctx = new DbEstoqueContext())
             {
                 if (ctx.Database.EnsureCreated())
-                {
-
+                { 
+                
                 }
             }
         }

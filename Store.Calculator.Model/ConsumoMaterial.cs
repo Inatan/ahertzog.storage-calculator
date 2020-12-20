@@ -1,10 +1,11 @@
-﻿using System;
-
-namespace Store.Calculator.Model
+﻿namespace Store.Calculator.Model
 {
     public class ConsumoMaterial
     {
-        public decimal Total {get {
+        public decimal Total 
+        {
+            get 
+            {
                 return MaterialConsumido.TotalUnitarioFinal * Quantidade;
             }
         }

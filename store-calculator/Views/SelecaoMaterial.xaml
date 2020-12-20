@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
-        Title="Seleção de material" Height="382" Width="424">
+        Title="Seleção de material" Height="377" Width="424">
     <Grid>
-        <DataGrid x:Name="dataGridClientes" Height="245" Margin="10,10,26,0" VerticalAlignment="Top"
-            AutoGenerateColumns="False"
-            SelectionUnit="FullRow"
-            SelectionMode="Extended"
-            CanUserReorderColumns="True"
-            CanUserResizeRows="True">
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>
+        <TextBox x:Name="txtPesquisa" HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="71,12,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridProdutos" Height="235" Margin="10,40,26,0" VerticalAlignment="Top"
+                AutoGenerateColumns="False"
+                SelectionUnit="FullRow"
+                SelectionMode="Extended"
+                CanUserReorderColumns="True"
+                CanUserResizeRows="True">
             <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
+                <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
@@ -25,15 +27,15 @@
                 </Style>
             </DataGrid.CellStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden"/>
-                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do cliente"/>
-                <DataGridTextColumn Binding="{Binding Unidade}" Header="Unidade de medida"/>
-                <DataGridTextColumn Binding="{Binding TotalUnitarioFinal}" Header="Valor"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do cliente" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Unidade}" Header="Unidade de medida" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding TotalUnitarioFinal}" Header="Valor" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Quantidade utilizada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,260,0,0"/>
-        <TextBox x:Name="txtQuantidade" HorizontalAlignment="Left" Height="23" Margin="135,263,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtQuantidade_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
-        <Button Content="Selecionar" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSelecionar" Click="btnSelecionar_Click"/>
+        <Label Content="Quantidade utilizada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,280,0,0"/>
+        <TextBox x:Name="txtQuantidade" HorizontalAlignment="Left" Height="23" Margin="140,283,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtQuantidade_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
+        <Button Content="Selecionar" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSelecionar" Click="btnSelecionar_Click"/>
 
     </Grid>
 </Window>

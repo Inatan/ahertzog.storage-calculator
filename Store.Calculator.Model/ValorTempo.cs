@@ -1,11 +1,12 @@
 ﻿using System;
 
-namespace store_calculator.Models
+namespace Store.Calculator.Model
 {
-    public class ValorHora
+    public class ValorTempo
     {
         public TimeSpan HoraFormatada { get; set; }
-        public string Tempo { get
+        public string Tempo {
+            get
             {
                 if (HoraFormatada.TotalMinutes > 60)
                     return HoraFormatada.TotalMinutes.ToString() + " minutos";
@@ -16,13 +17,13 @@ namespace store_calculator.Models
 
         public float Valor { get; set; }
 
-        public ValorHora()
+        public ValorTempo()
         {
             this.HoraFormatada = new TimeSpan();
             this.Valor = 0.00f;
         }
 
-        public ValorHora(TimeSpan horaFormatada, float valor)
+        public ValorTempo(TimeSpan horaFormatada, float valor)
         {
             this.Valor = Valor;
             this.HoraFormatada = horaFormatada;
