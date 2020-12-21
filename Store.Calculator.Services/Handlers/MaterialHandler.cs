@@ -46,5 +46,33 @@ namespace Store.Calculator.Services.Handlers
             }
 
         }
+
+        public void Altera(Material comando)
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                _repo.AtualizarMaterialEstoque(comando);
+
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
+
+        public void Deleta(Material comando)
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                _repo.ExcluirMaterialEstoque(comando);
+
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
     }
 }

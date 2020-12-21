@@ -199,6 +199,9 @@
     <Compile Include="Views\CadastroMateriaPrima.xaml.cs">
       <DependentUpon>CadastroMateriaPrima.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Materiais.cs">
+      <DependentUpon>Materiais.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Orcamento.xaml.cs">
       <DependentUpon>Orcamento.xaml</DependentUpon>
     </Compile>
@@ -208,6 +211,10 @@
     <Compile Include="Views\ServicosDespesa.xaml.cs">
       <DependentUpon>ServicosDespesa.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Materiais.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MenuInicial.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -8,5 +8,10 @@ namespace Store.Calculator.Services.Handlers
         void Cadastra(Material comando);
 
         List<Material> Listar();
+
+        void Altera(Material comando);
+
+        void Deleta(Material comando);
+
     }
 }

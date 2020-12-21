@@ -17,7 +17,7 @@ namespace Store.Calculator.App.Views
 
         private void BtnCadastro_Click(object sender, RoutedEventArgs e)
         {
-            CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
+            Materiais tela = new Materiais(_handler);
             tela.ShowDialog();
         }
 

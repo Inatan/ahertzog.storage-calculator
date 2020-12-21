@@ -76,6 +76,7 @@ namespace Store.Calculator.App.Views
                     Convert.ToDecimal(txtValorPago.Text)
                 );
             _handler.materialHandler.Cadastra(estoque);
+            DialogResult = true;
             MessageBox.Show("Produto Cadastrado com Sucesso!", "Sucesso", MessageBoxButton.OK,MessageBoxImage.Asterisk);
             this.Close();
         }

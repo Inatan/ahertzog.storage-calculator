@@ -1,0 +1,49 @@
+﻿<Window x:Class="Store.Calculator.App.Views.Materiais"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store.Calculator.App.Views"
+        mc:Ignorable="d"
+        Language="pt-br"
+        Title="Materiais" Height="367" Width="800">
+    <Grid>
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>
+        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="71,12,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridServicos" Height="235" Margin="10,40,31,0" VerticalAlignment="Top"
+                AutoGenerateColumns="False"
+                SelectionUnit="FullRow"
+                SelectionMode="Extended"
+                CanUserReorderColumns="True"
+                CanUserAddRows="false"
+                CanUserResizeRows="True">
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="id" Visibility="Hidden" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome do Serviço" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Unidade}" Header="Unidade" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Quantidade}" Header="Quantidade Última Compra" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding ValorPago , StringFormat=C2}" Header="Valor Pago Última Compra" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding ValorFrete , StringFormat=C2}" Header="Valor Frete" Width="*"/>
+                <DataGridTextColumn Binding="{Binding QuantoFaz}" Header="Quantos Faz" Width="*"/>
+                <DataGridTextColumn Binding="{Binding TotalUnitarioFinal, StringFormat=C2}" IsReadOnly="True" Header="Valor Unitário" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Adicionar" TabIndex="1"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="25,293,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
+        <Button Content="Salvar" TabIndex="2"  HorizontalAlignment="Left" Margin="155,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
+        <Button Content="Deletar" TabIndex="3" HorizontalAlignment="Left" Margin="285,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="4" HorizontalAlignment="Left" Margin="415,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+       
+
+    </Grid>
+</Window>

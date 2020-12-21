@@ -1,62 +1,53 @@
 ﻿using Store.Calculator.Model;
-using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace Store.Calculator.App.Views
 {
     /// <summary>
-    /// Lógica interna para ServicosDespesa.xaml
+    /// Lógica interna para Materiais.xaml
     /// </summary>
-    public partial class ServicosDespesa : Window
+    public partial class Materiais : Window
     {
         private readonly ServicesControl _handler;
 
+        private List<Material> materials;
 
+        private List<Material> deletados;
 
-        private List<ValorServico> servicos;
-        
-        private List<ValorServico> deletados;
-
-        public ServicosDespesa(ServicesControl handler)
+        public Materiais(ServicesControl handler)
         {
             _handler = handler;
             InitializeComponent();
-            servicos = handler.valorServicoHandler.Listar();
-            dataGridServicos.ItemsSource = servicos;
-            deletados = new List<ValorServico>();
+            materials = handler.materialHandler.Listar();
+            dataGridServicos.ItemsSource = materials;
+            deletados = new List<Material>();
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtValor.Text))
-                AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
-            else
+            CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
+            if (tela.ShowDialog() == true)
             {
-                ValorServico valorServico = new ValorServico(txtNome.Text, Convert.ToDecimal(txtValor.Text,AppUtils.cultureInfo));
-                servicos.Add(valorServico);
-                dataGridServicos.ItemsSource = servicos;
+                materials = _handler.materialHandler.Listar();
+                dataGridServicos.ItemsSource = materials;
                 dataGridServicos.Items.Refresh();
-                txtNome.Clear();
-                txtValor.Clear();
             }
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
 
-            foreach (ValorServico item in dataGridServicos.Items)
+            foreach (Material item in dataGridServicos.Items)
             {
-                if (item.Id > 0)
-                    _handler.valorServicoHandler.Altera(item);
-                else
-                    _handler.valorServicoHandler.Cadastra(item);
+                _handler.materialHandler.Altera(item);
             }
-            foreach (ValorServico item in deletados)
+            foreach (Material item in deletados)
             {
-                _handler.valorServicoHandler.Deleta(item);
+                _handler.materialHandler.Deleta(item);
             }
 
             if (MessageBox.Show("Alterações foram salvas com sucesso", "Salvar", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
@@ -65,11 +56,11 @@ namespace Store.Calculator.App.Views
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)
         {
-            if(dataGridServicos.SelectedItem != null)
+            if (dataGridServicos.SelectedItem != null)
             {
-                deletados.Add(dataGridServicos.SelectedItem as ValorServico);
-                servicos.RemoveAt(dataGridServicos.SelectedIndex);
-                dataGridServicos.ItemsSource = servicos;
+                deletados.Add(dataGridServicos.SelectedItem as Material);
+                materials.RemoveAt(dataGridServicos.SelectedIndex);
+                dataGridServicos.ItemsSource = materials;
                 dataGridServicos.Items.Refresh();
             }
             else
@@ -77,17 +68,12 @@ namespace Store.Calculator.App.Views
 
         }
 
-        private void txtValor_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            e.Handled = EventsUtils.ValidaDecimal(txtValor.Text, e.Text);
-        }
-
         private void txtPesquisa_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             dataGridServicos.Items.Filter = (obj) =>
             {
-                ValorServico servico = obj as ValorServico;
-                return servico.Nome.ToLower().Contains(txtPesquisa.Text.Trim().ToLower());
+                Material material = obj as Material;
+                return material.Nome.ToLower().Contains(txtPesquisa.Text.Trim().ToLower());
             };
         }
 
