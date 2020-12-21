@@ -9,8 +9,8 @@ namespace Store.Calculator.Infrastructure.Repository
         void IncluirValorServico(params ValorServico[] valoresServicos);
         void AtualizarValorServico(params ValorServico[] valoresServicos);
         void ExcluirValorServico(params ValorServico[] valoresServicos);
+        void LimpaTabelaMateriaEstoque();
 
-        //Categoria ObtemMaterialPorId(int id);
         IEnumerable<ValorServico> ObtemValorServico(Func<ValorServico, bool> filtro);
         IEnumerable<ValorServico> ObtemValorServico();
     }

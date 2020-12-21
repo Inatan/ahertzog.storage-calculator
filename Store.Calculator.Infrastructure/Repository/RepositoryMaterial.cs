@@ -32,6 +32,13 @@ namespace Store.Calculator.Infrastructure.Repository
             _ctx.SaveChanges();
         }
 
+        public void LimpaTabelaMateriaEstoque()
+        {
+            foreach (var material in _ctx.EstoqueMaterias)
+                _ctx.EstoqueMaterias.Remove(material);
+            _ctx.SaveChanges();
+        }
+
         public IEnumerable<Material> ObtemMaterialEstoque(Func<Material, bool> filtro)
         {
             return _ctx.EstoqueMaterias.Where(filtro);

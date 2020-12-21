@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text;
 
 namespace Store.Calculator.Model.Utils
 {
@@ -11,7 +12,7 @@ namespace Store.Calculator.Model.Utils
         {
             List<ValorServico> valoresServicos = new List<ValorServico>();
             CultureInfo cultureInfo = new CultureInfo("pt-br");
-            using (StreamReader sr = new StreamReader(fileName))
+            using (StreamReader sr = new StreamReader(fileName, Encoding.UTF8,true))
             {
                 string currentLine;
                 while ((currentLine = sr.ReadLine()) != null)
@@ -29,7 +30,7 @@ namespace Store.Calculator.Model.Utils
         {
             List<Material> materials = new List<Material>();
             CultureInfo cultureInfo = new CultureInfo("pt-br");
-            using (StreamReader sr = new StreamReader(fileName))
+            using (StreamReader sr = new StreamReader(fileName, Encoding.GetEncoding("utf-8")))
             {
                 string currentLine;
                 while ((currentLine = sr.ReadLine()) != null)

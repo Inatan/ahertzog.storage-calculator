@@ -12,7 +12,8 @@
         <DataGrid x:Name="dataGridProdutos" Height="235" Margin="10,40,26,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
-                SelectionMode="Extended"
+                SelectionMode="Single"
+                IsReadOnly="True" 
                 CanUserReorderColumns="True"
                 CanUserResizeRows="True">
             <DataGrid.CellStyle>

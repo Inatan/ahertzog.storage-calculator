@@ -104,10 +104,10 @@ namespace Store.Calculator.App.Views
                         Importador importador = new Importador();
                         List<ValorServico> valoresServicos = importador.LeValorServico(fileDialog.FileName);
                         
-                        _handler.valorServicoHandler.LimpaTable();
-                        _handler.valorServicoHandler.CadastraLista(valoresServicos);
                         dataGridServicos.ItemsSource = valoresServicos;
                         dataGridServicos.Items.Refresh();
+                        _handler.valorServicoHandler.LimpaTable();
+                        _handler.valorServicoHandler.CadastraLista(valoresServicos);
                         MessageBox.Show("Dados dos serviços atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     case System.Windows.Forms.DialogResult.Cancel:

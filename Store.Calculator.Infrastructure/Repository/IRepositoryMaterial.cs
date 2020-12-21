@@ -9,6 +9,7 @@ namespace Store.Calculator.Infrastructure.Repository
         void IncluirMaterialEstoque(params Material[] materias);
         void AtualizarMaterialEstoque(params Material[] materias);
         void ExcluirMaterialEstoque(params Material[] materias);
+        void LimpaTabelaMateriaEstoque();
 
         IEnumerable<Material> ObtemMaterialEstoque(Func<Material, bool> filtro);
         IEnumerable<Material> ObtemMaterialEstoque();

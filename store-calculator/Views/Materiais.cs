@@ -15,7 +15,7 @@ namespace Store.Calculator.App.Views
     {
         private readonly ServicesControl _handler;
 
-        private List<Material> materials;
+        private List<Material> materiais;
 
         private List<Material> deletados;
 
@@ -23,8 +23,8 @@ namespace Store.Calculator.App.Views
         {
             _handler = handler;
             InitializeComponent();
-            materials = handler.materialHandler.Listar();
-            dataGridServicos.ItemsSource = materials;
+            materiais = handler.materialHandler.Listar();
+            dataGridServicos.ItemsSource = materiais;
             deletados = new List<Material>();
         }
 
@@ -33,8 +33,8 @@ namespace Store.Calculator.App.Views
             CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
             if (tela.ShowDialog() == true)
             {
-                materials = _handler.materialHandler.Listar();
-                dataGridServicos.ItemsSource = materials;
+                materiais = _handler.materialHandler.Listar();
+                dataGridServicos.ItemsSource = materiais;
                 dataGridServicos.Items.Refresh();
             }
         }
@@ -60,8 +60,8 @@ namespace Store.Calculator.App.Views
             if (dataGridServicos.SelectedItem != null)
             {
                 deletados.Add(dataGridServicos.SelectedItem as Material);
-                materials.RemoveAt(dataGridServicos.SelectedIndex);
-                dataGridServicos.ItemsSource = materials;
+                materiais.RemoveAt(dataGridServicos.SelectedIndex);
+                dataGridServicos.ItemsSource = materiais;
                 dataGridServicos.Items.Refresh();
             }
             else
@@ -91,11 +91,11 @@ namespace Store.Calculator.App.Views
                 {
                     case System.Windows.Forms.DialogResult.OK:
                         Importador importador = new Importador();
-                        List<Material> materials = importador.LeMateriais(fileDialog.FileName);
-                        _handler.materialHandler.LimpaTable();
-                        _handler.materialHandler.CadastraLista(materials);
-                        dataGridServicos.ItemsSource = materials;
+                        materiais = importador.LeMateriais(fileDialog.FileName);
+                        dataGridServicos.ItemsSource = materiais;
                         dataGridServicos.Items.Refresh();
+                        _handler.materialHandler.LimpaTable();
+                        _handler.materialHandler.CadastraLista(materiais);
                         MessageBox.Show("Dados dos materiais foram atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     case System.Windows.Forms.DialogResult.Cancel:

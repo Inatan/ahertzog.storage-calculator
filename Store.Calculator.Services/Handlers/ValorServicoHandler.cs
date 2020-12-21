@@ -76,11 +76,7 @@ namespace Store.Calculator.Services.Handlers
         {
             try
             {
-                //_logger.LogDebug("Persistindo a tarefa...");
-                foreach (var item in _repo.ObtemValorServico())
-                {
-                    _repo.ExcluirValorServico(item);
-                }
+                _repo.LimpaTabelaMateriaEstoque();
             }
             catch (Exception ex)
             {

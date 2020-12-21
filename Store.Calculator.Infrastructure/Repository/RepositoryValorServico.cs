@@ -32,6 +32,13 @@ namespace Store.Calculator.Infrastructure.Repository
             _ctx.SaveChanges();
         }
 
+        public void LimpaTabelaMateriaEstoque()
+        {
+            foreach (var servico in _ctx.ValorServico)
+                _ctx.ValorServico.Remove(servico);
+            _ctx.SaveChanges();
+        }
+
         public IEnumerable<ValorServico> ObtemValorServico(Func<ValorServico, bool> filtro)
         {
             return _ctx.ValorServico.Where(filtro);
