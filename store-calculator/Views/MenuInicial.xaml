@@ -7,38 +7,31 @@
         Background="#fcdfe6"
         mc:Ignorable="d"
         Title="Início" Height="768" Width="1366" Left="0" Top="0">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="30"  BorderBrush="#FEAFC4"  BorderThickness="1,1,5,5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-
         </Grid.ColumnDefinitions>
-
-        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" FontSize="30" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="30"/>
-                    <!--FEAFC4-->
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" FontSize="30" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="30"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Click="BtnServicos_Click" Content="Tabela de Serviços e Despesas" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="30"/>
-                    
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Image HorizontalAlignment="Left" Height="695" Margin="20,20,0,0" VerticalAlignment="Top" Width="805" Source="/res/logo.jpeg">
-
-        </Image>
+        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" FontSize="30" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65" />
+        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" FontSize="30" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
+        <Button Click="BtnServicos_Click" Content="Tabela de Serviços e Despesas" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
+        <Image HorizontalAlignment="Left" Height="695" Margin="20,20,0,0" VerticalAlignment="Top" Width="805" Source="/res/logo.jpeg"/>
     </Grid>
 </Window>
