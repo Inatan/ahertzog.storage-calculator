@@ -3,6 +3,8 @@ using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Windows;
 
 namespace Store.Calculator.App.Views
@@ -96,21 +98,38 @@ namespace Store.Calculator.App.Views
             using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
             {
                 fileDialog.InitialDirectory = "c:\\";
-                fileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                fileDialog.Filter = "txt files (*.csv)|*.csv";
                 fileDialog.FilterIndex = 2;
                 fileDialog.RestoreDirectory = true;
                 var result = fileDialog.ShowDialog();
+                List<ValorServico> valoresServicos = new List<ValorServico>();
                 switch (result)
                 {
                     case System.Windows.Forms.DialogResult.OK:
                         //var file = fileDialog.FileName;
-                        //TxtFile.Text = file;
-                        //TxtFile.ToolTip = file;
+                        using (StreamReader sr = new StreamReader(fileDialog.FileName))
+                        {
+                            string currentLine;
+                            // currentLine will be null when the StreamReader reaches the end of file
+                            while ((currentLine = sr.ReadLine()) != null)
+                            {
+                                // Search, case insensitive, if the currentLine contains the searched keyword
+                                string[] linhaSeparada = currentLine.Split(';');
+                                string nome = linhaSeparada[0];
+                                decimal valor =  Decimal.Parse(linhaSeparada[1].Replace("R$","").Trim(),NumberStyles.Currency,AppUtils.cultureInfo);
+                                valoresServicos.Add(new ValorServico(nome, valor));
+                            }
+                            dataGridServicos.ItemsSource = valoresServicos;
+                            dataGridServicos.Items.Refresh();
+                            // TODO: limpa banco
+                            // atualiza banco
+                            // Envia mensagem
+                            // Fecha janela
+                        }
                         break;
                     case System.Windows.Forms.DialogResult.Cancel:
                     default:
-                        //TxtFile.Text = null;
-                        //TxtFile.ToolTip = null;
+                        
                         break;
                 }
             }
