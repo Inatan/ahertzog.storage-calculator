@@ -31,6 +31,19 @@ namespace Store.Calculator.Services.Handlers
             }
         }
 
+        public void CadastraLista(List<ValorServico> comando)
+        {
+            try
+            {
+                _repo.IncluirValorServico(comando.ToArray());
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
+
+
         public void Altera(ValorServico comando)
         {
             try
@@ -52,6 +65,22 @@ namespace Store.Calculator.Services.Handlers
                 //_logger.LogDebug("Persistindo a tarefa...");
                 _repo.ExcluirValorServico(comando);
 
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
+
+        public void LimpaTable()
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                foreach (var item in _repo.ObtemValorServico())
+                {
+                    _repo.ExcluirValorServico(item);
+                }
             }
             catch (Exception ex)
             {

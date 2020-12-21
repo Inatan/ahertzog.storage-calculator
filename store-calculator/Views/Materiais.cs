@@ -1,4 +1,5 @@
 ﻿using Store.Calculator.Model;
+using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
 using System.Collections.Generic;
@@ -89,14 +90,16 @@ namespace Store.Calculator.App.Views
                 switch (result)
                 {
                     case System.Windows.Forms.DialogResult.OK:
-                        //var file = fileDialog.FileName;
-                        //TxtFile.Text = file;
-                        //TxtFile.ToolTip = file;
+                        Importador importador = new Importador();
+                        List<Material> materials = importador.LeMateriais(fileDialog.FileName);
+                        _handler.materialHandler.LimpaTable();
+                        _handler.materialHandler.CadastraLista(materials);
+                        dataGridServicos.ItemsSource = materials;
+                        dataGridServicos.Items.Refresh();
+                        MessageBox.Show("Dados dos materiais foram atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     case System.Windows.Forms.DialogResult.Cancel:
                     default:
-                        //TxtFile.Text = null;
-                        //TxtFile.ToolTip = null;
                         break;
                 }
             }

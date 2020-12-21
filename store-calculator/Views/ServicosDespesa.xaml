@@ -41,8 +41,8 @@
         <TextBox x:Name="txtNome" TabIndex="1"  HorizontalAlignment="Left" Height="23" Margin="71,280,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.167,0.435"/>
         <Button Content="Salvar" TabIndex="4"  HorizontalAlignment="Left" Margin="18,308,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
         <Button Content="Adicionar" TabIndex="3"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="410,283,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
-        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="147,308,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
-        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="415,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="135,308,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="255,308,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
 
     </Grid>
 </Window>

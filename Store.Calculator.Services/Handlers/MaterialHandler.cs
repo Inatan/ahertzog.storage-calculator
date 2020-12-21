@@ -32,6 +32,18 @@ namespace Store.Calculator.Services.Handlers
 
         }
 
+        public void CadastraLista(List<Material> comando)
+        {
+            try
+            {
+                _repo.IncluirMaterialEstoque(comando.ToArray());
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
+
         public List<Material> Listar()
         {
             try
@@ -54,6 +66,22 @@ namespace Store.Calculator.Services.Handlers
                 //_logger.LogDebug("Persistindo a tarefa...");
                 _repo.AtualizarMaterialEstoque(comando);
 
+            }
+            catch (Exception ex)
+            {
+                // _logger.LogError(ex, ex.Message);
+            }
+        }
+
+        public void LimpaTable()
+        {
+            try
+            {
+                //_logger.LogDebug("Persistindo a tarefa...");
+                foreach (var item in _repo.ObtemMaterialEstoque())
+                {
+                    _repo.ExcluirMaterialEstoque(item);
+                }
             }
             catch (Exception ex)
             {
