@@ -1,4 +1,4 @@
-﻿using Store.Calculator.Infrastructure;
+﻿using Store.Calculator.Infrastructure.Repository;
 using Store.Calculator.Model;
 using System;
 using System.Collections.Generic;
@@ -8,16 +8,16 @@ namespace Store.Calculator.Services.Handlers
 {
 
 
-    public class CadastroMaterialHandler : ICadastroMaterialHandler
+    public class MaterialHandler : IMaterialHandler
     {
         IRepositoryMaterial _repo;
 
-        public CadastroMaterialHandler(IRepositoryMaterial repo)
+        public MaterialHandler(IRepositoryMaterial repo)
         {
             _repo = repo;
         }
 
-        public void Execute(Material comando)
+        public void Cadastra(Material comando)
         {
             try
             {

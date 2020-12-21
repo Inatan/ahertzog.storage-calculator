@@ -205,6 +205,9 @@
     <Compile Include="Views\SelecaoMaterial.xaml.cs">
       <DependentUpon>SelecaoMaterial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ServicosDespesa.xaml.cs">
+      <DependentUpon>ServicosDespesa.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MenuInicial.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -226,6 +229,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SelecaoMaterial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServicosDespesa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

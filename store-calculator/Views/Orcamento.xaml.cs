@@ -1,6 +1,6 @@
 ﻿using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
-using Store.Calculator.Services.Handlers;
+using Store.Calculator.Services;
 using System;
 using System.Windows;
 using System.Windows.Documents;
@@ -13,11 +13,11 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class Orcamento : Window
     {
-        private readonly ICadastroMaterialHandler _handler;
+        private readonly ServicesControl _handler;
 
         private decimal totalPayment;
 
-        public Orcamento(ICadastroMaterialHandler handler)
+        public Orcamento(ServicesControl handler)
         {
             _handler = handler;
             totalPayment = 0.00M;

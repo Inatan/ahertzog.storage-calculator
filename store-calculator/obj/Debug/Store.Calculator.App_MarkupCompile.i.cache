@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\App.xaml
-4-1195782885
+5-1428003994
 
-10-599611648
+11-512921847
 160-761768320
-Views\MenuInicial.xaml;Views\CadastroMateriaPrima.xaml;Views\Orcamento.xaml;Views\SelecaoMaterial.xaml;
+Views\MenuInicial.xaml;Views\CadastroMateriaPrima.xaml;Views\Orcamento.xaml;Views\SelecaoMaterial.xaml;Views\ServicosDespesa.xaml;
 
-False
+True
 

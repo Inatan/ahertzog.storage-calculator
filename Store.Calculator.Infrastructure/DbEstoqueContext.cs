@@ -16,9 +16,8 @@ namespace Store.Calculator.Infrastructure
         }
 
         public DbSet<Material> EstoqueMaterias { get; set; }
+        public DbSet<ValorServico> ValorServico { get; set; }
         public DbContextOptions<DbEstoqueContext> Options { get; }
-
-        //public DbSet<ValorTempo> valorTempo { get; set  }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

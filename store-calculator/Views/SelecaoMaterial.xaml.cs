@@ -1,5 +1,6 @@
 ﻿using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
+using Store.Calculator.Services;
 using Store.Calculator.Services.Handlers;
 using System;
 using System.Windows;
@@ -12,15 +13,14 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class SelecaoMaterial : Window
     {
-        private readonly ICadastroMaterialHandler _handler;
-
+        private readonly ServicesControl _handler;
         public ConsumoMaterial consumo {get; private set;}
         
-        public SelecaoMaterial(ICadastroMaterialHandler handler)
+        public SelecaoMaterial(ServicesControl handler)
         {
             _handler = handler;
             InitializeComponent();
-            var materiais = handler.Listar();
+            var materiais = handler.materialHandler.Listar();
             dataGridProdutos.ItemsSource = materiais;
         }
 

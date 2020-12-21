@@ -1,4 +1,4 @@
-﻿using Store.Calculator.Services.Handlers;
+﻿using Store.Calculator.Services;
 using System.Windows;
 
 namespace Store.Calculator.App.Views
@@ -8,8 +8,8 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class MenuInicial : Window
     {
-        private readonly ICadastroMaterialHandler _handler;
-        public MenuInicial(ICadastroMaterialHandler handler)
+        private readonly ServicesControl _handler;
+        public MenuInicial(ServicesControl handler)
         {
             _handler = handler;
             InitializeComponent();
@@ -27,9 +27,10 @@ namespace Store.Calculator.App.Views
             tela.ShowDialog();
         }
 
-        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+        private void BtnServicos_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            ServicosDespesa tela = new ServicosDespesa(_handler);
+            tela.ShowDialog();
         }
     }
 }

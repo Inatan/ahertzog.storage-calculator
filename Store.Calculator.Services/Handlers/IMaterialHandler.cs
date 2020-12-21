@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Store.Calculator.Services.Handlers
 {
-    public interface ICadastroMaterialHandler
+    public interface IMaterialHandler
     {
-        void Execute(Material comando);
+        void Cadastra(Material comando);
 
         List<Material> Listar();
     }

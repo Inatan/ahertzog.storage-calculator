@@ -202,3 +202,5 @@ C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calcula
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\Orcamento.baml
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\SelecaoMaterial.g.cs
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\SelecaoMaterial.baml
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\ServicosDespesa.g.cs
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\ServicosDespesa.baml

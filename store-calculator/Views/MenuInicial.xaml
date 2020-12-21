@@ -29,7 +29,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Click="BtnFechar_Click" Content="Fechar" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
+        <Button Click="BtnServicos_Click" Content="Tabela de Serviços e Despesas" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" BorderBrush="#FEAFC4" Height="65" BorderThickness="1,1,5,5" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Store.Calculator.Infrastructure
+namespace Store.Calculator.Infrastructure.Repository
 {
     public class RepositoryMaterial : IRepositoryMaterial
     {

@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
-using Store.Calculator.Services.Handlers;
+using Store.Calculator.Services;
 
 namespace Store.Calculator.App.Views
 {
@@ -12,9 +12,9 @@ namespace Store.Calculator.App.Views
     /// </summary>
     public partial class CadastroMateriaPrima : Window
     {
-        private readonly ICadastroMaterialHandler _handler;
+        private readonly ServicesControl _handler;
 
-        public CadastroMateriaPrima(ICadastroMaterialHandler handler)
+        public CadastroMateriaPrima(ServicesControl handler)
         {
             _handler = handler;
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace Store.Calculator.App.Views
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
             Model.Material estoque = 
-                new Model.Material(
+                new Material(
                     txtNome.Text,
                     txtUnidadeMedida.Text,
                     Convert.ToInt32(txtQuantidade.Text),
@@ -75,7 +75,7 @@ namespace Store.Calculator.App.Views
                     Convert.ToDecimal(txtValorFrete.Text),
                     Convert.ToDecimal(txtValorPago.Text)
                 );
-            _handler.Execute(estoque);
+            _handler.materialHandler.Cadastra(estoque);
             MessageBox.Show("Produto Cadastrado com Sucesso!", "Sucesso", MessageBoxButton.OK,MessageBoxImage.Asterisk);
             this.Close();
         }

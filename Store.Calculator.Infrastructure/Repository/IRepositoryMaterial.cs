@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Store.Calculator.Infrastructure
+namespace Store.Calculator.Infrastructure.Repository
 {
     public interface IRepositoryMaterial
     {
@@ -10,7 +10,6 @@ namespace Store.Calculator.Infrastructure
         void AtualizarMaterialEstoque(params Material[] materias);
         void ExcluirMaterialEstoque(params Material[] materias);
 
-        //Categoria ObtemMaterialPorId(int id);
         IEnumerable<Material> ObtemMaterialEstoque(Func<Material, bool> filtro);
         IEnumerable<Material> ObtemMaterialEstoque();
     }
