@@ -4,28 +4,26 @@ using System.Linq;
 
 namespace Store.Calculator.Model
 {
-    public class Orcamento
+    public class OrcamentoCalculado
     {
-        public Orcamento(TimeSpan tempoEstimado, IList<ConsumoMaterial> materiasPrima)
+        public OrcamentoCalculado(TimeSpan tempoEstimado, IList<ConsumoMaterial> materiasPrima, decimal valorHora)
         {
             this.TempoEstimado = tempoEstimado;
             MateriasPrima = materiasPrima;
+            ValorHora = valorHora;
         }
 
-        public TimeSpan TempoEstimado { get; set; }
+        public TimeSpan TempoEstimado { get; }
+
+        public decimal ValorHora { get; }
         public IList<ConsumoMaterial> MateriasPrima { get; set; }
 
         public decimal Total {
             get
             {
-                return  MateriasPrima.Sum(m => m.Total) + ((decimal)TempoEstimado.TotalHours * BuscaValorHora());
+                return  MateriasPrima.Sum(m => m.Total) + ((decimal)TempoEstimado.TotalHours * ValorHora);
             }
         }
 
-
-        private decimal BuscaValorHora()
-        {
-            return 16.00M;
-        }
     }
 }

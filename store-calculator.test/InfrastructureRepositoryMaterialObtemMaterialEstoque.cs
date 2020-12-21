@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.Calculator.Infrastructure;
+using Store.Calculator.Infrastructure.Repository;
 using Store.Calculator.Model;
 using Store.Calculator.Services.Handlers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Store.Calculator.Tests
@@ -30,7 +29,7 @@ namespace Store.Calculator.Tests
 
             //act
             repo.IncluirMaterialEstoque(materiais.ToArray());
-            var handler = new CadastroMaterialHandler(repo);
+            var handler = new MaterialHandler(repo);
 
             //assert
             var lista = handler.Listar();

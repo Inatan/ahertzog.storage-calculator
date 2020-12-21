@@ -2,6 +2,7 @@
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
@@ -18,12 +19,15 @@ namespace Store.Calculator.App.Views
 
         private decimal totalPayment;
 
+        private List<ConsumoMaterial> Selecionados;
+
         public Orcamento(ServicesControl handler)
         {
             _handler = handler;
             totalPayment = 0.00M;
             InitializeComponent();
             txtValorHora.Text = AppUtils.FormatCurrency(handler.valorServicoHandler.Listar().Sum(s => s.ValorPorHora));
+            Selecionados = new List<ConsumoMaterial>();
         }
 
         private void AtualizaTabela(ConsumoMaterial consumo)
@@ -62,12 +66,38 @@ namespace Store.Calculator.App.Views
             if(tela.ShowDialog() == true)
             {
                 AtualizaTabela(tela.consumo);
+                Selecionados.Add(tela.consumo);
             }
         }
 
         private void txtTempo_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             e.Handled = EventsUtils.ValidaTempo(txtTempo.Text, e.Text);
+        }
+
+        private void BtnGerarOrcamento_Click(object sender, RoutedEventArgs e)
+        {
+            string[] tempoSeparado = txtTempo.Text.Split(':');
+            int horas = Convert.ToInt32(tempoSeparado[0]);
+            int minutos = Convert.ToInt32(tempoSeparado[1]);
+            OrcamentoCalculado orcamento = new OrcamentoCalculado(new TimeSpan(horas,minutos,0), Selecionados, Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo));
+            AtualizaValorFinal(orcamento);
+        }
+
+        private void AtualizaValorFinal(OrcamentoCalculado orcamento)
+        {
+            TableRow tableRow = new TableRow();
+            decimal valorFinal = Convert.ToDecimal(orcamento.Total, AppUtils.cultureInfo);
+
+            string totalTable = $"Valor Final: {AppUtils.FormatCurrency(valorFinal)}";
+            Paragraph paragraphFooter = new Paragraph(new Run(totalTable));
+            paragraphFooter.FontSize = 30;
+            paragraphFooter.TextAlignment = TextAlignment.Right;
+            paragraphFooter.FontWeight = FontWeights.Bold;
+            TableCell tableCellFooter = new TableCell(paragraphFooter);
+            tableCellFooter.ColumnSpan = 5;
+            tableRow.Cells.Add(tableCellFooter);
+            TableRowValor.Rows.Add(tableRow);
         }
     }
 }
