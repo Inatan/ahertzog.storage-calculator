@@ -2,6 +2,7 @@
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -22,6 +23,7 @@ namespace Store.Calculator.App.Views
             _handler = handler;
             totalPayment = 0.00M;
             InitializeComponent();
+            txtValorHora.Text = AppUtils.FormatCurrency(handler.valorServicoHandler.Listar().Sum(s => s.ValorPorHora));
         }
 
         private void AtualizaTabela(ConsumoMaterial consumo)
