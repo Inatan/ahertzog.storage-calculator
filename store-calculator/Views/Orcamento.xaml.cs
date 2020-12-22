@@ -80,7 +80,13 @@ namespace Store.Calculator.App.Views
             string[] tempoSeparado = txtTempo.Text.Split(':');
             int horas = Convert.ToInt32(tempoSeparado[0]);
             int minutos = Convert.ToInt32(tempoSeparado[1]);
-            OrcamentoCalculado orcamento = new OrcamentoCalculado(new TimeSpan(horas,minutos,0), Selecionados, Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo));
+            OrcamentoCalculado orcamento = 
+                new OrcamentoCalculado(
+                    new TimeSpan(horas,minutos,0), 
+                    Selecionados, 
+                    Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo),
+                    Convert.ToDecimal(txtLucro.Text,AppUtils.cultureInfo)
+                );
             AtualizaValorFinal(orcamento);
         }
 
@@ -98,6 +104,11 @@ namespace Store.Calculator.App.Views
             tableCellFooter.ColumnSpan = 5;
             tableRow.Cells.Add(tableCellFooter);
             TableRowValor.Rows.Add(tableRow);
+        }
+
+        private void txtLucro_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = EventsUtils.ValidaPercentual(txtLucro.Text, e.Text);
         }
     }
 }

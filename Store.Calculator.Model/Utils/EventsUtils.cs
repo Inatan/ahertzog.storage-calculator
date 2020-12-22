@@ -32,9 +32,13 @@ namespace Store.Calculator.Model.Utils
         public static bool ValidaTempo(string texto, string digito)
         {
             Regex regex = new Regex("^(?:(?:[01]?[0-9]|2[0-3])(?::(?:[0-5][0-9]?)?)?)?$");
-
-
             return !regex.IsMatch(texto+digito);
+        }
+
+        public static bool ValidaPercentual(string texto, string digito)
+        {
+            Regex regex = new Regex("^(100|[0-9]?[0-9]?)?$");
+            return !regex.IsMatch(texto + digito);
         }
     }
 }

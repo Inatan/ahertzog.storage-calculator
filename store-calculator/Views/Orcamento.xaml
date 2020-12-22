@@ -53,11 +53,13 @@
         </FlowDocumentScrollViewer>
         <Button x:Name="BtnAdicionarProduto" Click="BtnAdicionarProduto_Click" Content="Adicionar Produto" HorizontalAlignment="Left" Margin="25,600,0,0" VerticalAlignment="Top" Width="115"/>
         <Button x:Name="BtnGerarOrcamento" Click="BtnGerarOrcamento_Click" Content="Gerar Orçamento" HorizontalAlignment="Left" Margin="155,600,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Tempo Estimado:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,562,0,0" Width="115"/>
-        <TextBox x:Name="txtTempo" HorizontalAlignment="Left" Height="23" Margin="155,565,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" >
+        <Label Content="Tempo Estimado:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,565,0,0" Width="110"/>
+        <TextBox x:Name="txtTempo" HorizontalAlignment="Left" Height="23" Margin="130,568,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="65" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" >
         </TextBox>
-        <Label Content="Valor por hora:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,562,0,0" Width="115"/>
-        <TextBox x:Name="txtValorHora" HorizontalAlignment="Left" IsEnabled="False" Height="23" Margin="410,565,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" />
+        <Label Content="Valor por hora:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,568,0,0" Width="90"/>
+        <TextBox x:Name="txtValorHora" HorizontalAlignment="Left" IsEnabled="False" Height="23" Margin="295,568,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="65" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" />
+        <Label Content="Lucro %" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="365,568,0,0" Width="62"/>
+        <TextBox x:Name="txtLucro" HorizontalAlignment="Left" Height="23" Margin="440,568,0,0" PreviewTextInput="txtLucro_PreviewTextInput" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="65" RenderTransformOrigin="-0.167,0.435" />
 
     </Grid>
 </Window>
