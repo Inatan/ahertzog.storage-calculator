@@ -206,3 +206,10 @@ C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calcula
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\ServicosDespesa.baml
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\Materiais.g.cs
 C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\obj\Debug\Views\Materiais.baml
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\DynamicPDF.NETFramework40.dll
+C:\Users\inatan.hertzog\Desktop\Inatan\products\storage-calculator\store-calculator\store-calculator\bin\Debug\DynamicPDF.NETFramework40.xml

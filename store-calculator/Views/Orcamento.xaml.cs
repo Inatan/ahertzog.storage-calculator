@@ -1,4 +1,5 @@
-﻿using Store.Calculator.Model;
+﻿using ceTe.DynamicPDF;
+using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
-using System.Windows.Media;
+using System.Windows.Forms;
 
 namespace Store.Calculator.App.Views
 {
@@ -37,7 +38,7 @@ namespace Store.Calculator.App.Views
                 TableRowValor.Rows.RemoveAt(TableRowValor.Rows.Count - 1);
             TableRowValor.Rows.Add(tableRow);
             if (TableRowValor.Rows.Count % 2 == 1)
-                tableRow.Background = Brushes.LightGray;
+                tableRow.Background = System.Windows.Media.Brushes.LightGray;
 
             tableRow.Cells.Add(new TableCell(new Paragraph(new Run(consumo.MaterialConsumido.Nome))));
             tableRow.Cells.Add(new TableCell(new Paragraph(new Run(consumo.MaterialConsumido.Unidade))));
@@ -104,6 +105,36 @@ namespace Store.Calculator.App.Views
             tableCellFooter.ColumnSpan = 5;
             tableRow.Cells.Add(tableCellFooter);
             TableRowValor.Rows.Add(tableRow);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF document (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Teste.pdf";
+            DialogResult result = saveFileDialog.ShowDialog();
+            PdfCreator pdfCreator = new PdfCreator()
+            if (result != null)
+            {
+                pdfCreator.CriaArquivo(saveFileDialog.FileName)
+                
+
+                
+                //using (PdfDocument document = new PdfDocument())
+                //{
+                //    //Add a page to the document
+                //    PdfPage page = document.Pages.Add();
+
+                //    //Create PDF graphics for a page
+                //    PdfGraphics graphics = page.Graphics;
+
+                //    //Set the standard font
+                //    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+                //    //Draw the text
+                //    graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+                //    //Save the document
+                //    document.Save(saveFileDialog.FileName);
+                //}
+            }
         }
 
         private void txtLucro_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)

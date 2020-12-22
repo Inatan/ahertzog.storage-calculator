@@ -17,7 +17,7 @@ namespace Store.Calculator.Tests
                 new ConsumoMaterial(new Material("Papel","g",1,1,10M,4M),1),
             };
 
-            OrcamentoCalculado orcamento = new OrcamentoCalculado(new System.TimeSpan(0, 2, 0, 0, 0), materiaisConsumo, 16.00M);
+            OrcamentoCalculado orcamento = new OrcamentoCalculado(new System.TimeSpan(0, 2, 0, 0, 0), materiaisConsumo, 16.00M,20);
 
             decimal valorEsperado = 260.00M;
             //act
