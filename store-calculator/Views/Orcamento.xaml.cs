@@ -110,31 +110,35 @@ namespace Store.Calculator.App.Views
             saveFileDialog.Filter = "PDF document (*.pdf)|*.pdf";
             saveFileDialog.FileName = "Teste.pdf";
             DialogResult result = saveFileDialog.ShowDialog();
-            PdfCreator pdfCreator = new PdfCreator()
-            if (result != null)
+            PdfCreator pdfCreator = new PdfCreator();
+            if (result == System.Windows.Forms.DialogResult.OK)
             {
-                pdfCreator.CriaArquivo(saveFileDialog.FileName)
-                
+                string filePath = saveFileDialog.FileName;
+                Document document = new Document();
+                //Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
+                //document.Pages.Add(page);
 
-                
-                //using (PdfDocument document = new PdfDocument())
-                //{
-                //    //Add a page to the document
-                //    PdfPage page = document.Pages.Add();
+                //string labelText = " Hello World...\nHellow again \n Hi everyone";
+                //Label label = new Label(labelText, 0, 0, 504, 100, Font.Helvetica, 18, TextAlign.Center);
+                //page.Elements.Add(label);
+                PageInfo layoutPage = new PageInfo(PageSize.A4, PageOrientation.Portrait);
+                Uri uri = new Uri(@"http://www.google.com");
 
-                //    //Create PDF graphics for a page
-                //    PdfGraphics graphics = page.Graphics;
+                HtmlLayout html = new HtmlLayout(uri, layoutPage);
 
-                //    //Set the standard font
-                //    PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                html.Header.Center.Text = "%%PR%%%%SP%% of %%ST%%";
+                html.Header.Center.HasPageNumbers = true;
+                html.Header.Center.Width = 200;
 
-                //    //Draw the text
-                //    graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+                html.Footer.Center.Text = "%%PR%%%%SP(A)%% of %%ST(B)%%";
+                html.Footer.Center.HasPageNumbers = true;
+                html.Footer.Center.Width = 200;
 
-                //    //Save the document
-                //    document.Save(saveFileDialog.FileName);
-                //}
+                document = html.Layout();
+
+                document.Draw(filePath);
             }
+                
         }
 
         private void txtLucro_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
