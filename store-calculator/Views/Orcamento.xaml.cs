@@ -1,4 +1,4 @@
-﻿using ceTe.DynamicPDF;
+﻿using GemBox.Document;
 using Store.Calculator.Model;
 using Store.Calculator.Model.Utils;
 using Store.Calculator.Services;
@@ -40,18 +40,18 @@ namespace Store.Calculator.App.Views
             if (TableRowValor.Rows.Count % 2 == 1)
                 tableRow.Background = System.Windows.Media.Brushes.LightGray;
 
-            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(consumo.MaterialConsumido.Nome))));
-            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(consumo.MaterialConsumido.Unidade))));
-            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(AppUtils.FormatCurrency(consumo.MaterialConsumido.TotalUnitarioFinal)))));
-            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(consumo.Quantidade.ToString(AppUtils.cultureInfo)))));
-            tableRow.Cells.Add(new TableCell(new Paragraph(new Run(AppUtils.FormatCurrency(consumo.Total)))));
+            tableRow.Cells.Add(new TableCell(new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(consumo.MaterialConsumido.Nome))));
+            tableRow.Cells.Add(new TableCell(new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(consumo.MaterialConsumido.Unidade))));
+            tableRow.Cells.Add(new TableCell(new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(AppUtils.FormatCurrency(consumo.MaterialConsumido.TotalUnitarioFinal)))));
+            tableRow.Cells.Add(new TableCell(new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(consumo.Quantidade.ToString(AppUtils.cultureInfo)))));
+            tableRow.Cells.Add(new TableCell(new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(AppUtils.FormatCurrency(consumo.Total)))));
 
             tableRow = new TableRow();
             decimal totalCel = Convert.ToDecimal(consumo.Total, AppUtils.cultureInfo);
             totalPayment += totalCel;
 
             string totalTable = $"Total: {AppUtils.FormatCurrency(totalPayment)}";
-            Paragraph paragraphFooter = new Paragraph(new Run(totalTable));
+            System.Windows.Documents.Paragraph paragraphFooter = new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(totalTable));
             paragraphFooter.FontSize = 20;
             paragraphFooter.TextAlignment = TextAlignment.Right;
             paragraphFooter.FontWeight = FontWeights.Bold;
@@ -78,17 +78,34 @@ namespace Store.Calculator.App.Views
 
         private void BtnGerarOrcamento_Click(object sender, RoutedEventArgs e)
         {
-            string[] tempoSeparado = txtTempo.Text.Split(':');
-            int horas = Convert.ToInt32(tempoSeparado[0]);
-            int minutos = Convert.ToInt32(tempoSeparado[1]);
-            OrcamentoCalculado orcamento = 
-                new OrcamentoCalculado(
-                    new TimeSpan(horas,minutos,0), 
-                    Selecionados, 
-                    Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo),
-                    Convert.ToDecimal(txtLucro.Text,AppUtils.cultureInfo)
-                );
-            AtualizaValorFinal(orcamento);
+            if (string.IsNullOrEmpty(txtTempo.Text))
+                AppUtils.MensagemErro("Tempo estimado é obrigatório!");
+            else if(string.IsNullOrEmpty(txtLucro.Text))
+                AppUtils.MensagemErro("Percentual de lucro é obrigatório!");
+            else if(Selecionados.Count ==0)
+                AppUtils.MensagemErro("Nenhum material foi selecionado!");
+            else
+            {
+                int horas =0, minutos = 0;
+                if (txtTempo.Text.Contains(':'))
+                {
+                    string[] tempoSeparado = txtTempo.Text.Split(':');
+                    horas = Convert.ToInt32(tempoSeparado[0]);
+                    minutos = Convert.ToInt32(tempoSeparado[1]);
+                }
+                else if(!string.IsNullOrEmpty(txtTempo.Text))
+                {
+                    horas = Convert.ToInt32(txtTempo);
+                }
+                OrcamentoCalculado orcamento = 
+                    new OrcamentoCalculado(
+                        new TimeSpan(horas,minutos,0), 
+                        Selecionados, 
+                        Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo),
+                        Convert.ToDecimal(txtLucro.Text,AppUtils.cultureInfo)
+                    );
+                AtualizaValorFinal(orcamento);
+            }
         }
 
         private void AtualizaValorFinal(OrcamentoCalculado orcamento)
@@ -97,7 +114,7 @@ namespace Store.Calculator.App.Views
             decimal valorFinal = Convert.ToDecimal(orcamento.Total, AppUtils.cultureInfo);
 
             string totalTable = $"Valor Final: {AppUtils.FormatCurrency(valorFinal)}";
-            Paragraph paragraphFooter = new Paragraph(new Run(totalTable));
+            System.Windows.Documents.Paragraph paragraphFooter = new System.Windows.Documents.Paragraph(new System.Windows.Documents.Run(totalTable));
             paragraphFooter.FontSize = 30;
             paragraphFooter.TextAlignment = TextAlignment.Right;
             paragraphFooter.FontWeight = FontWeights.Bold;
@@ -114,29 +131,65 @@ namespace Store.Calculator.App.Views
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                Document document = new Document();
-                //Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
-                //document.Pages.Add(page);
 
-                //string labelText = " Hello World...\nHellow again \n Hi everyone";
-                //Label label = new Label(labelText, 0, 0, 504, 100, Font.Helvetica, 18, TextAlign.Center);
-                //page.Elements.Add(label);
-                PageInfo layoutPage = new PageInfo(PageSize.A4, PageOrientation.Portrait);
-                Uri uri = new Uri(@"http://www.google.com");
+                ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-                HtmlLayout html = new HtmlLayout(uri, layoutPage);
+                var document = new DocumentModel();
 
-                html.Header.Center.Text = "%%PR%%%%SP%% of %%ST%%";
-                html.Header.Center.HasPageNumbers = true;
-                html.Header.Center.Width = 200;
+                var largeFont = new CharacterStyle("Large Font") { CharacterFormat = { Size = 24 } };
+                document.Styles.Add(largeFont);
 
-                html.Footer.Center.Text = "%%PR%%%%SP(A)%% of %%ST(B)%%";
-                html.Footer.Center.HasPageNumbers = true;
-                html.Footer.Center.Width = 200;
 
-                document = html.Layout();
+                var section = new GemBox.Document.Section(document);
+                document.Sections.Add(section);
 
-                document.Draw(filePath);
+                var paragraph = new GemBox.Document.Paragraph(document,
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new GemBox.Document.Run(document, "Valor do Orçamento:")
+                    {
+                        CharacterFormat = { Style = largeFont }
+                    },
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new GemBox.Document.Run(document, $"{AppUtils.FormatCurrency(orcamento.Total)}")
+                    {
+                        CharacterFormat = { Style = largeFont }
+                    },
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new GemBox.Document.Run(document, "Observações: ")
+                    {
+                        CharacterFormat = { Style = largeFont, Size= 14 }
+                    }
+                );
+                paragraph.ParagraphFormat.Alignment = GemBox.Document.HorizontalAlignment.Center;
+
+
+                section.Blocks.Add(paragraph);
+
+                Picture picture = new Picture(document, "./res/images/logopdf.png",200,211,LengthUnit.Pixel);
+                FloatingLayout layout = new FloatingLayout(
+                    new HorizontalPosition(HorizontalPositionType.Center, HorizontalPositionAnchor.Page),
+                    new VerticalPosition(1.25, LengthUnit.Centimeter, VerticalPositionAnchor.Page),
+                    picture.Layout.Size);
+                layout.WrappingStyle = TextWrappingStyle.TopAndBottom;
+
+                picture.Layout = layout;
+                paragraph.Inlines.Add(picture);
+
+                document.Save(filePath);
             }
                 
         }
