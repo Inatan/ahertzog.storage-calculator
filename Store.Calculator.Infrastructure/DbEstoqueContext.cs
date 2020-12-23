@@ -24,11 +24,5 @@ namespace Store.Calculator.Infrastructure
             if (!optionsBuilder.IsConfigured)
                 optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true");
         }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<EstoqueMateriaPrima>();
-        //}
-
     }
 }
