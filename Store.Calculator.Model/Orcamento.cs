@@ -23,7 +23,7 @@ namespace Store.Calculator.Model
         public decimal Total {
             get
             {
-                return  MateriasPrima.Sum(m => m.Total) + ((decimal)TempoEstimado.TotalHours * ValorHora) * (1 + Lucro/100);
+                return  (MateriasPrima.Sum(m => m.Total) + ((decimal)TempoEstimado.TotalHours * ValorHora)) * (1 + Lucro/100);
             }
         }
 

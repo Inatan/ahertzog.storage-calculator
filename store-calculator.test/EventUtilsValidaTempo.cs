@@ -12,6 +12,8 @@ namespace Store.Calculator.Tests
         [InlineData("23", ":")]
         [InlineData("23:", "4")]
         [InlineData("23:4", "5")]
+        [InlineData("2", "8")]
+        [InlineData("8", "1")]
         public void DadoTextoValorDecimalRetornaFals(string textoEntrada, string digitoEntrada)
         {
             // arrange
@@ -25,8 +27,6 @@ namespace Store.Calculator.Tests
         [InlineData("3", "a")]
         [InlineData("3", ",")]
         [InlineData("3", "$")]
-        [InlineData("8", "1")]
-        [InlineData("2", "8")]
         [InlineData("23:", "7")]
         [InlineData("12:3", ":")]
         public void DadoTextoComLetraslRetornaTrue(string textoEntrada, string digitoEntrada)

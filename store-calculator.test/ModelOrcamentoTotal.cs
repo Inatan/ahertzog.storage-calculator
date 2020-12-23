@@ -19,7 +19,7 @@ namespace Store.Calculator.Tests
 
             OrcamentoCalculado orcamento = new OrcamentoCalculado(new System.TimeSpan(0, 2, 0, 0, 0), materiaisConsumo, 16.00M,20);
 
-            decimal valorEsperado = 260.00M;
+            decimal valorEsperado = 312.00M;
             //act
             var total = orcamento.Total;
 
