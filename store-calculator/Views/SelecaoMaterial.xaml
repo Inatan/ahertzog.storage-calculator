@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
+        Background="#fcdfe6"
         Title="Seleção de material" Height="377" Width="424">
     <Grid>
         <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>

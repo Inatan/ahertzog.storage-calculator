@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
+        Background="#fcdfe6"
         Language="pt-br"
-        Title="ServicosDespesa" Height="377" Width="684">
+        Title="Serviços e Despesas" Height="377" Width="684">
     <Grid>
         <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>
         <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="71,12,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="11.3.0" />
+    <PackageReference Include="GemBox.Document" Version="33.0.1049" />
   </ItemGroup>
 
 </Project>

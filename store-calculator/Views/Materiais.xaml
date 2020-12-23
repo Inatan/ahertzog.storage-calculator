@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
+        Background="#fcdfe6"
         Language="pt-br"
-        Title="Materiais" Height="367" Width="800">
+        Title="Materiais" Height="735" Width="1366" Left="0" Top="0">
     <Grid>
-        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>
-        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="71,12,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
-        <DataGrid x:Name="dataGridServicos" Height="235" Margin="10,40,31,0" VerticalAlignment="Top"
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,15,0,0" Height="30"/>
+        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="81,15,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridServicos" Height="590" Margin="20,60,18,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
                 SelectionMode="Extended"
@@ -34,16 +35,16 @@
                 <DataGridTextColumn Binding="{Binding Unidade}" Header="Unidade" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Quantidade}" Header="Quantidade Última Compra" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding ValorPago , StringFormat=C2}" Header="Valor Pago Última Compra" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding ValorFrete , StringFormat=C2}" Header="Valor Frete" Width="*"/>
-                <DataGridTextColumn Binding="{Binding QuantoFaz}" Header="Quantos Faz" Width="*"/>
+                <DataGridTextColumn Binding="{Binding ValorFrete , StringFormat=C2}" Header="Valor Frete" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding QuantoFaz}" Header="Quantos Faz" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding TotalUnitarioFinal, StringFormat=C2}" IsReadOnly="True" Header="Valor Unitário" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Adicionar" TabIndex="1"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="25,293,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
-        <Button Content="Salvar" TabIndex="2"  HorizontalAlignment="Left" Margin="155,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
-        <Button Content="Deletar" TabIndex="3" HorizontalAlignment="Left" Margin="285,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
-        <Button Content="Importar csv" TabIndex="4" HorizontalAlignment="Left" Margin="415,293,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
-       
+        <Button Content="Adicionar" TabIndex="1"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="20,665,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
+        <Button Content="Salvar" TabIndex="2"  HorizontalAlignment="Left" Margin="140,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
+        <Button Content="Deletar" TabIndex="3" HorizontalAlignment="Left" Margin="260,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="4" HorizontalAlignment="Left" Margin="380,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+
 
     </Grid>
 </Window>

@@ -5,23 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
+        Background="#fcdfe6"
         Title="Cadastro Materia Prima" Height="352.754" Width="314.724">
     <Grid>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.56,-3.467" Click="BtnSalvar_Click"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" Click="btnCancelar_Click" HorizontalAlignment="Left" Margin="165,281,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSalvar" TabIndex="6" Content="Salvar" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.56,-3.467" Click="BtnSalvar_Click"/>
+        <Button x:Name="btnCancelar" TabIndex="7" Content="Cancelar" Click="btnCancelar_Click" HorizontalAlignment="Left" Margin="165,281,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="21,19,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtNome"/>
+        <TextBox x:Name="txtNome" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtNome"/>
         <Label Content="Quantidade" HorizontalAlignment="Left" Margin="164,85,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQuantidade"  PreviewTextInput="NumeroValidationQuantidade" HorizontalAlignment="Left" Height="23" Margin="164,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtQtd" KeyUp="TxtQuantidade_KeyUp"/>
+        <TextBox x:Name="txtQuantidade" TabIndex="2"  PreviewTextInput="NumeroValidationQuantidade" HorizontalAlignment="Left" Height="23" Margin="164,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtQtd" KeyUp="TxtQuantidade_KeyUp"/>
         <Label Content="Valor Unitário" HorizontalAlignment="Left" Margin="164,209,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtValorUnidade" HorizontalAlignment="Left" Height="23" Margin="164,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtValorPago" IsEnabled="False"/>
         <Label Content="Unidade de Medida" HorizontalAlignment="Left" Margin="21,85,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtUnidadeMedida" HorizontalAlignment="Left" Height="23" Margin="21,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtUnidadeMedida"/>
+        <TextBox x:Name="txtUnidadeMedida" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="21,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtUnidadeMedida"/>
         <Label Content="Valor Pago" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtValorPago" PreviewTextInput="DecimalValidationValorPago" HorizontalAlignment="Left" Height="23" Margin="21,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtValorPago"/>
+        <TextBox x:Name="txtValorPago" TabIndex="3" PreviewTextInput="DecimalValidationValorPago" HorizontalAlignment="Left" Height="23" Margin="21,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtValorPago"/>
         <Label Content="Valor Frete" HorizontalAlignment="Left" Margin="164,142,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtValorFrete" PreviewTextInput="DecimalValidationValorFrete" HorizontalAlignment="Left" Height="23" Margin="164,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtValorFrete" KeyUp="TxtValorFrete_KeyUp"/>
+        <TextBox x:Name="txtValorFrete" TabIndex="4" PreviewTextInput="DecimalValidationValorFrete" HorizontalAlignment="Left" Height="23" Margin="164,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtValorFrete" KeyUp="TxtValorFrete_KeyUp"/>
         <Label Content="Quanto Faz" HorizontalAlignment="Left" Margin="21,209,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQuantoFaz"  PreviewTextInput="NumeroValidationQuantoFaz" HorizontalAlignment="Left" Height="23" Margin="21,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtQuantoFaz" KeyUp="TxtQuantoFaz_KeyUp"/>
+        <TextBox x:Name="txtQuantoFaz" TabIndex="5" PreviewTextInput="NumeroValidationQuantoFaz" HorizontalAlignment="Left" Height="23" Margin="21,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtQuantoFaz" KeyUp="TxtQuantoFaz_KeyUp"/>
     </Grid>
 </Window>

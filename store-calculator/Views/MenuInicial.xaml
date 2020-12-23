@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store.Calculator.App"
         Background="#fcdfe6"
         mc:Ignorable="d"
-        Title="Início" Height="768" Width="1366" Left="0" Top="0">
+        Title="Ateliê Orçamentos" Height="735" Width="1366" Left="0" Top="0">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -29,10 +29,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="BtnCadastro_Click" Content="Cadastrar Matéria Prima" FontSize="30" HorizontalAlignment="Left" Margin="845,230,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65" />
-        <Button Click="BtnOrcamento_Click" Content="Realizar Orçamento" FontSize="30" HorizontalAlignment="Left" Margin="845,325,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
-        <Button Click="BtnServicos_Click" Content="Tabela de Serviços e Despesas" HorizontalAlignment="Left" FontSize="30" Margin="845,420,0,0" VerticalAlignment="Top" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
-        <Image HorizontalAlignment="Left" Height="570" Margin="160,80,0,0" VerticalAlignment="Top" Width="570" Source="/res/images/logo.png" RenderTransformOrigin="0.5,0.5">
+        <Button Click="BtnCadastro_Click" Content="Materiais" FontSize="30" HorizontalAlignment="Right" Margin="0,0,30,220" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65" />
+        <Button Click="BtnOrcamento_Click" Content="Orçamento" FontSize="30" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
+        <Button Click="BtnServicos_Click" Content="Serviços e Despesas" HorizontalAlignment="Right" FontSize="30" Margin="845,220,30,0" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
+        <Image HorizontalAlignment="Stretch" MinHeight="570" Margin="0,0,500,0" VerticalAlignment="Stretch" MinWidth="570" Source="/res/images/logo.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
