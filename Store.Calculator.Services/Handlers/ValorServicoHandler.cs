@@ -1,4 +1,5 @@
-﻿using Store.Calculator.Infrastructure.Repository;
+﻿using Microsoft.Extensions.Logging;
+using Store.Calculator.Infrastructure.Repository;
 using Store.Calculator.Model;
 using System;
 using System.Collections.Generic;
@@ -11,23 +12,26 @@ namespace Store.Calculator.Services.Handlers
     public class ValorServicoHandler : IValorServicoHandler
     {
         IRepositoryValorServico _repo;
+        ILogger<ValorServicoHandler> _logger;
 
         public ValorServicoHandler(IRepositoryValorServico repo)
         {
+
             _repo = repo;
+            _logger = new LoggerFactory().CreateLogger<ValorServicoHandler>();
         }
 
         public void Cadastra(ValorServico comando)
         {
             try
             {
-                //_logger.LogDebug("Persistindo a tarefa...");
+                _logger.LogDebug("Persistindo a tarefa...");
                 _repo.IncluirValorServico(comando);
 
             }
             catch (Exception ex)
             {
-               // _logger.LogError(ex, ex.Message);
+               _logger.LogError(ex, ex.Message);
             }
         }
 
@@ -39,7 +43,7 @@ namespace Store.Calculator.Services.Handlers
             }
             catch (Exception ex)
             {
-                // _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, ex.Message);
             }
         }
 
@@ -48,13 +52,13 @@ namespace Store.Calculator.Services.Handlers
         {
             try
             {
-                //_logger.LogDebug("Persistindo a tarefa...");
+                _logger.LogDebug("Persistindo a tarefa...");
                 _repo.AtualizarValorServico(comando);
 
             }
             catch (Exception ex)
             {
-                // _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, ex.Message);
             }
         }
 
@@ -62,13 +66,13 @@ namespace Store.Calculator.Services.Handlers
         {
             try
             {
-                //_logger.LogDebug("Persistindo a tarefa...");
+                _logger.LogDebug("Persistindo a tarefa...");
                 _repo.ExcluirValorServico(comando);
 
             }
             catch (Exception ex)
             {
-                // _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, ex.Message);
             }
         }
 
@@ -76,11 +80,12 @@ namespace Store.Calculator.Services.Handlers
         {
             try
             {
+                _logger.LogDebug("Persistindo a tarefa...");
                 _repo.LimpaTabelaMateriaEstoque();
             }
             catch (Exception ex)
             {
-                // _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, ex.Message);
             }
         }
 
@@ -88,13 +93,13 @@ namespace Store.Calculator.Services.Handlers
         {
             try
             {
-                //_logger.LogDebug("Persistindo a tarefa...");
+                _logger.LogDebug("Persistindo a tarefa...");
                 return _repo.ObtemValorServico().ToList() ?? new List<ValorServico>();
             }
             catch (Exception ex)
             {
                 return new List<ValorServico>();
-                // _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, ex.Message);
             }
 
         }
