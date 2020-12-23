@@ -14,9 +14,9 @@
         MinWidth="1366"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,15,0,0" Height="30"/>
-        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="81,15,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
-        <DataGrid x:Name="dataGridServicos" Height="590" Margin="20,60,18,0" VerticalAlignment="Top"
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,17,0,0" Height="30"/>
+        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="79,17,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridServicos" Height="585" Margin="23,60,23,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
                 SelectionMode="Extended"
@@ -45,10 +45,10 @@
                 <DataGridTextColumn Binding="{Binding TotalUnitarioFinal, StringFormat=C2}" IsReadOnly="True" Header="Valor Unitário" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Adicionar" TabIndex="1"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="20,665,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
-        <Button Content="Salvar" TabIndex="2"  HorizontalAlignment="Left" Margin="140,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
-        <Button Content="Deletar" TabIndex="3" HorizontalAlignment="Left" Margin="260,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
-        <Button Content="Importar csv" TabIndex="4" HorizontalAlignment="Left" Margin="380,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+        <Button Content="Adicionar" TabIndex="1"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="23,665,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
+        <Button Content="Salvar" TabIndex="2"  HorizontalAlignment="Left" Margin="141,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
+        <Button Content="Deletar" TabIndex="3" HorizontalAlignment="Left" Margin="261,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="4" HorizontalAlignment="Left" Margin="381,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
 
 
     </Grid>

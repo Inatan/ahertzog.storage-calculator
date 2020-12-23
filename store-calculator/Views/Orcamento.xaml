@@ -13,7 +13,7 @@
         MinWidth="1366"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <FlowDocumentScrollViewer   Margin="25,10,21,109">
+        <FlowDocumentScrollViewer   Margin="23,17,21,104">
             <FlowDocument>
 
                 <Table x:Name="TableValores" CellSpacing="5">
@@ -57,15 +57,15 @@
                 </Table>
             </FlowDocument>
         </FlowDocumentScrollViewer>
-        <Button x:Name="BtnAdicionarProduto" TabIndex="2" Click="BtnAdicionarProduto_Click" Content="Adicionar Produto" HorizontalAlignment="Left" Margin="25,655,0,0" VerticalAlignment="Top" Width="115"/>
-        <Button x:Name="BtnGerarOrcamento" TabIndex="3" Click="BtnGerarOrcamento_Click" Content="Gerar Orçamento" HorizontalAlignment="Left" Margin="165,655,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Tempo Estimado:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,619,0,0" Width="100"/>
-        <TextBox x:Name="txtTempo" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="125,623,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="100" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" >
+        <Button x:Name="BtnAdicionarProduto" TabIndex="2" Click="BtnAdicionarProduto_Click" Content="Adicionar Produto" HorizontalAlignment="Left" Margin="23,660,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="BtnGerarOrcamento" TabIndex="3" Click="BtnGerarOrcamento_Click" Content="Gerar Orçamento" HorizontalAlignment="Left" Margin="160,660,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tempo Estimado:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,619,0,0" Width="100"/>
+        <TextBox x:Name="txtTempo" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="128,619,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" >
         </TextBox>
-        <Label Content="Valor por hora:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,619,0,0" Width="90" Height="33"/>
-        <TextBox x:Name="txtValorHora"  HorizontalAlignment="Left" IsEnabled="False" Height="23" Margin="510,623,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="100" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" />
-        <Label Content="Lucro %" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="245,619,0,0" Width="55" Height="30" RenderTransformOrigin="0.455,0.267"/>
-        <TextBox x:Name="txtLucro" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="300,623,0,0" PreviewTextInput="txtLucro_PreviewTextInput" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.167,0.435" />
+        <Label Content="Valor por hora:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,619,0,0" Width="90" Height="33"/>
+        <TextBox x:Name="txtValorHora"  HorizontalAlignment="Left" IsEnabled="False" Height="23" Margin="550,619,0,0"  TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtTempo_PreviewTextInput" RenderTransformOrigin="-0.167,0.435" />
+        <Label Content="Lucro %:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="265,619,0,0" Width="55" Height="30" RenderTransformOrigin="0.455,0.267"/>
+        <TextBox x:Name="txtLucro" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="320,619,0,0" PreviewTextInput="txtLucro_PreviewTextInput" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.167,0.435" />
 
     </Grid>
 </Window>

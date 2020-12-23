@@ -14,9 +14,9 @@
         MinWidth="1366"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,17,0,0"/>
-        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="90,17,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
-        <DataGrid x:Name="dataGridServicos" Height="560" Margin="23,60,18,0" VerticalAlignment="Top"
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,17,0,0"/>
+        <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="79,17,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridServicos" Height="545" Margin="23,60,23,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
                 SelectionMode="Extended"
@@ -41,14 +41,14 @@
                 <DataGridTextColumn Binding="{Binding ValorPorHora, StringFormat=C2}" IsReadOnly="True" Header="Valor por Hora" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Valor" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,643,0,0"/>
-        <TextBox x:Name="txtValor" TabIndex="2"  HorizontalAlignment="Left" Height="23" Margin="280,643,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtValor_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
-        <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,643,0,0"/>
-        <TextBox x:Name="txtNome" TabIndex="1"  HorizontalAlignment="Left" Height="23" Margin="80,643,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.167,0.435"/>
-        <Button Content="Salvar" TabIndex="4"  HorizontalAlignment="Left" Margin="23,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
-        <Button Content="Adicionar" TabIndex="3"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="420,646,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
-        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="140,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
-        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="260,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+        <Label Content="Valor" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,622,0,0"/>
+        <TextBox x:Name="txtValor" TabIndex="2"  HorizontalAlignment="Left" Height="23" Margin="255,622,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtValor_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
+        <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,622,0,0"/>
+        <TextBox x:Name="txtNome" TabIndex="1"  HorizontalAlignment="Left" Height="23" Margin="70,622,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.167,0.435"/>
+        <Button Content="Salvar" TabIndex="4"  HorizontalAlignment="Left" Margin="23,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
+        <Button Content="Adicionar" TabIndex="3"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="395,625,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
+        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="141,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="261,665,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
 
     </Grid>
 </Window>

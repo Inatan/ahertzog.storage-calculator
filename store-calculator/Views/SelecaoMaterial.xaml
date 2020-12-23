@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Background="#fcdfe6"
         ResizeMode="NoResize"
-        Title="Seleção de material" Height="377" Width="424" Top="0" Left="0">
+        Title="Seleção de material" Height="411" Width="424" Top="0" Left="0">
     <Grid>
-        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>
-        <TextBox x:Name="txtPesquisa" HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="71,12,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
-        <DataGrid x:Name="dataGridProdutos" Height="235" Margin="10,40,26,0" VerticalAlignment="Top"
+        <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,17,0,0"/>
+        <TextBox x:Name="txtPesquisa" HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="79,17,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+        <DataGrid x:Name="dataGridProdutos" Height="215" Margin="23,60,26,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
                 SelectionMode="Single"
@@ -36,9 +36,9 @@
                 <DataGridTextColumn Binding="{Binding TotalUnitarioFinal}" Header="Valor" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Quantidade utilizada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,280,0,0"/>
-        <TextBox x:Name="txtQuantidade" HorizontalAlignment="Left" Height="23" Margin="140,283,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtQuantidade_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
-        <Button Content="Selecionar" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSelecionar" Click="btnSelecionar_Click"/>
+        <Label Content="Quantidade utilizada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,294,0,0"/>
+        <TextBox x:Name="txtQuantidade" HorizontalAlignment="Left" Height="23" Margin="145,297,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtQuantidade_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
+        <Button Content="Selecionar" HorizontalAlignment="Left" Margin="23,340,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSelecionar" Click="btnSelecionar_Click"/>
 
     </Grid>
 </Window>
