@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
         Background="#fcdfe6"
+        ResizeMode="NoResize"
         Title="Seleção de material" Height="377" Width="424" Top="0" Left="0">
     <Grid>
         <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0"/>

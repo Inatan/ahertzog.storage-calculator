@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Background="#fcdfe6"
         Language="pt-br"
-        Title="Serviços e Despesas" Height="735" Width="1366" Top="0" Left="0">
+        Title="Serviços e Despesas"  
+        Height="735" 
+        Width="1366"
+        MinHeight="735" 
+        MinWidth="1366"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,17,0,0"/>
         <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="90,17,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
@@ -40,10 +45,10 @@
         <TextBox x:Name="txtValor" TabIndex="2"  HorizontalAlignment="Left" Height="23" Margin="280,643,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtValor_PreviewTextInput" RenderTransformOrigin="-0.167,0.435"/>
         <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,643,0,0"/>
         <TextBox x:Name="txtNome" TabIndex="1"  HorizontalAlignment="Left" Height="23" Margin="80,643,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.167,0.435"/>
-        <Button Content="Salvar" TabIndex="4"  HorizontalAlignment="Left" Margin="20,674,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
-        <Button Content="Adicionar" TabIndex="3"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="420,643,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
-        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="140,674,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
-        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="260,674,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
+        <Button Content="Salvar" TabIndex="4"  HorizontalAlignment="Left" Margin="23,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnSalvar" Click="btnSalvar_Click"/>
+        <Button Content="Adicionar" TabIndex="3"  Name="btnAdicionar" HorizontalAlignment="Left" Margin="420,646,0,0" VerticalAlignment="Top" Width="100" Click="btnAdicionar_Click"/>
+        <Button Content="Deletar" TabIndex="5" HorizontalAlignment="Left" Margin="140,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnDeletar" Click="btnDeletar_Click"/>
+        <Button Content="Importar csv" TabIndex="6" HorizontalAlignment="Left" Margin="260,671,0,0" VerticalAlignment="Top" Width="100" x:Name="btnImportar" Click="btnImportar_Click"/>
 
     </Grid>
 </Window>

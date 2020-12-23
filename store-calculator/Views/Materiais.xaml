@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Background="#fcdfe6"
         Language="pt-br"
-        Title="Materiais" Height="735" Width="1366" Left="0" Top="0">
+        Title="Materiais"  
+        Height="735" 
+        Width="1366"
+        MinHeight="735" 
+        MinWidth="1366"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Pesquisa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,15,0,0" Height="30"/>
         <TextBox x:Name="txtPesquisa" TabIndex="0"  HorizontalAlignment="Left" TextChanged="txtPesquisa_TextChanged" Height="23"  Margin="81,15,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />

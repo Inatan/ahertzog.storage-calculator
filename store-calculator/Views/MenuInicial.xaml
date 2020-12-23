@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Store.Calculator.App"
         Background="#fcdfe6"
         mc:Ignorable="d"
-        Title="Ateliê Orçamentos" Height="735" Width="1366" Left="0" Top="0">
+        Title="Ateliê Orçamentos"
+        Height="735" 
+        Width="1366"
+        MinHeight="735" 
+        MinWidth="1366"
+        WindowStartupLocation="CenterScreen" 
+        >
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -31,7 +37,7 @@
         </Grid.ColumnDefinitions>
         <Button Click="BtnCadastro_Click" Content="Materiais" FontSize="30" HorizontalAlignment="Right" Margin="0,0,30,220" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65" />
         <Button Click="BtnOrcamento_Click" Content="Orçamento" FontSize="30" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
-        <Button Click="BtnServicos_Click" Content="Serviços e Despesas" HorizontalAlignment="Right" FontSize="30" Margin="845,220,30,0" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
+        <Button Click="BtnServicos_Click" Content="Serviços e Despesas" HorizontalAlignment="Right" FontSize="30" Margin="0,220,30,0" VerticalAlignment="Center" Width="485" Foreground="#FEAFC4" Background="#FFF0F3" Height="65"  />
         <Image HorizontalAlignment="Stretch" MinHeight="570" Margin="0,0,500,0" VerticalAlignment="Stretch" MinWidth="570" Source="/res/images/logo.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>

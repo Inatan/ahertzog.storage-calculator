@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Store.Calculator.App.Views"
         mc:Ignorable="d"
         Background="#fcdfe6"
+        ResizeMode="NoResize"
         Title="Cadastro Materia Prima" Height="352.754" Width="314.724">
     <Grid>
         <Button x:Name="btnSalvar" TabIndex="6" Content="Salvar" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.56,-3.467" Click="BtnSalvar_Click"/>
-        <Button x:Name="btnCancelar" TabIndex="7" Content="Cancelar" Click="btnCancelar_Click" HorizontalAlignment="Left" Margin="165,281,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCancelar" TabIndex="7" Content="Cancelar" Click="btnCancelar_Click" HorizontalAlignment="Left" Margin="164,281,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="21,19,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtNome" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.Name="txtNome"/>
         <Label Content="Quantidade" HorizontalAlignment="Left" Margin="164,85,0,0" VerticalAlignment="Top"/>
