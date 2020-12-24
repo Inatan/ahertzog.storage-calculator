@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Calculator.App", "store-calculator\Store.Calculator.App.csproj", "{2A7249FA-F12A-4D20-ACC4-2F2014F9C928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Calculator.Tests", "store-calculator.test\Store.Calculator.Tests.csproj", "{591478D9-6216-457E-BF89-DF1ECD2B0713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Calculator.Tests", "store-calculator.test\Store.Calculator.Tests.csproj", "{591478D9-6216-457E-BF89-DF1ECD2B0713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Calculator.Infrastructure", "Store.Calculator.Infrastructure\Store.Calculator.Infrastructure.csproj", "{31CDE9AF-39DD-445A-8EEE-2F55BE168DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Calculator.Infrastructure", "Store.Calculator.Infrastructure\Store.Calculator.Infrastructure.csproj", "{31CDE9AF-39DD-445A-8EEE-2F55BE168DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Calculator.Services", "Store.Calculator.Services\Store.Calculator.Services.csproj", "{64AB0786-D607-4DB4-94A7-82D09360682C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Calculator.Services", "Store.Calculator.Services\Store.Calculator.Services.csproj", "{64AB0786-D607-4DB4-94A7-82D09360682C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Calculator.Model", "Store.Calculator.Model\Store.Calculator.Model.csproj", "{F1BAA28C-D194-49B9-BB10-08867B518C0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Calculator.Model", "Store.Calculator.Model\Store.Calculator.Model.csproj", "{F1BAA28C-D194-49B9-BB10-08867B518C0F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Store.Calculator.Setup", "Store.Calculator.Setup\Store.Calculator.Setup.vdproj", "{5AF85694-0B77-4A5F-B83A-204104F1D0EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,8 @@ Global
 		{F1BAA28C-D194-49B9-BB10-08867B518C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1BAA28C-D194-49B9-BB10-08867B518C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1BAA28C-D194-49B9-BB10-08867B518C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF85694-0B77-4A5F-B83A-204104F1D0EB}.Debug|Any CPU.ActiveCfg = Debug
+		{5AF85694-0B77-4A5F-B83A-204104F1D0EB}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
