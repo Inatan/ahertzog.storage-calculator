@@ -63,11 +63,18 @@ namespace Store.Calculator.App.Views
 
         private void BtnAdicionarProduto_Click(object sender, RoutedEventArgs e)
         {
-            SelecaoMaterial tela = new SelecaoMaterial(_handler);
-            if(tela.ShowDialog() == true)
+            try
             {
-                AtualizaTabela(tela.consumo);
-                Selecionados.Add(tela.consumo);
+                SelecaoMaterial tela = new SelecaoMaterial(_handler);
+                if(tela.ShowDialog() == true)
+                {
+                    AtualizaTabela(tela.consumo);
+                    Selecionados.Add(tela.consumo);
+                }
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao adiconar produto {ex.Message}");
             }
         }
 
@@ -78,33 +85,40 @@ namespace Store.Calculator.App.Views
 
         private void BtnGerarOrcamento_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTempo.Text))
-                AppUtils.MensagemErro("Tempo estimado é obrigatório!");
-            else if(string.IsNullOrEmpty(txtLucro.Text))
-                AppUtils.MensagemErro("Percentual de lucro é obrigatório!");
-            else if(Selecionados.Count ==0)
-                AppUtils.MensagemErro("Nenhum material foi selecionado!");
-            else
+            try
             {
-                int horas =0, minutos = 0;
-                if (txtTempo.Text.Contains(':'))
+                if (string.IsNullOrEmpty(txtTempo.Text))
+                    AppUtils.MensagemErro("Tempo estimado é obrigatório!");
+                else if(string.IsNullOrEmpty(txtLucro.Text))
+                    AppUtils.MensagemErro("Percentual de lucro é obrigatório!");
+                else if(Selecionados.Count ==0)
+                    AppUtils.MensagemErro("Nenhum material foi selecionado!");
+                else
                 {
-                    string[] tempoSeparado = txtTempo.Text.Split(':');
-                    horas = Convert.ToInt32(tempoSeparado[0]);
-                    minutos = Convert.ToInt32(tempoSeparado[1]);
+                    int horas =0, minutos = 0;
+                    if (txtTempo.Text.Contains(':'))
+                    {
+                        string[] tempoSeparado = txtTempo.Text.Split(':');
+                        horas = Convert.ToInt32(tempoSeparado[0]);
+                        minutos = Convert.ToInt32(tempoSeparado[1]);
+                    }
+                    else if(!string.IsNullOrEmpty(txtTempo.Text))
+                    {
+                        horas = Convert.ToInt32(txtTempo);
+                    }
+                    OrcamentoCalculado orcamento = 
+                        new OrcamentoCalculado(
+                            new TimeSpan(horas,minutos,0), 
+                            Selecionados, 
+                            Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo),
+                            Convert.ToDecimal(txtLucro.Text,AppUtils.cultureInfo)
+                        );
+                    AtualizaValorFinal(orcamento);
                 }
-                else if(!string.IsNullOrEmpty(txtTempo.Text))
-                {
-                    horas = Convert.ToInt32(txtTempo);
-                }
-                OrcamentoCalculado orcamento = 
-                    new OrcamentoCalculado(
-                        new TimeSpan(horas,minutos,0), 
-                        Selecionados, 
-                        Convert.ToDecimal(txtValorHora.Text.Replace("R$","").Trim(), AppUtils.cultureInfo),
-                        Convert.ToDecimal(txtLucro.Text,AppUtils.cultureInfo)
-                    );
-                AtualizaValorFinal(orcamento);
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao adiconar produto {ex.Message}");
             }
         }
 

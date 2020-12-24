@@ -30,43 +30,63 @@ namespace Store.Calculator.App.Views
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
-            if (tela.ShowDialog() == true)
+            try
             {
-                materiais = _handler.materialHandler.Listar();
-                dataGridServicos.ItemsSource = materiais;
-                dataGridServicos.Items.Refresh();
+                CadastroMateriaPrima tela = new CadastroMateriaPrima(_handler);
+                if (tela.ShowDialog() == true)
+                {
+                    materiais = _handler.materialHandler.Listar();
+                    dataGridServicos.ItemsSource = materiais;
+                    dataGridServicos.Items.Refresh();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao adicionar dados: {ex.Message}");
             }
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-
-            foreach (Material item in dataGridServicos.Items)
+            try
             {
-                _handler.materialHandler.Altera(item);
-            }
-            foreach (Material item in deletados)
-            {
-                _handler.materialHandler.Deleta(item);
-            }
+                foreach (Material item in dataGridServicos.Items)
+                {
+                    _handler.materialHandler.Altera(item);
+                }
+                foreach (Material item in deletados)
+                {
+                    _handler.materialHandler.Deleta(item);
+                }
 
-            if (MessageBox.Show("Alterações foram salvas com sucesso", "Salvar", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
-                this.Close();
+                if (MessageBox.Show("Alterações foram salvas com sucesso", "Salvar", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                    this.Close();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao salvar dados: {ex.Message}");
+            }
         }
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)
         {
-            if (dataGridServicos.SelectedItem != null)
+            try
             {
-                deletados.Add(dataGridServicos.SelectedItem as Material);
-                materiais.RemoveAt(dataGridServicos.SelectedIndex);
-                dataGridServicos.ItemsSource = materiais;
-                dataGridServicos.Items.Refresh();
+                if (dataGridServicos.SelectedItem != null)
+                {
+                    deletados.Add(dataGridServicos.SelectedItem as Material);
+                    materiais.RemoveAt(dataGridServicos.SelectedIndex);
+                    dataGridServicos.ItemsSource = materiais;
+                    dataGridServicos.Items.Refresh();
+                }
+                else
+                    AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
             }
-            else
-                AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
-
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao deletar linha: {ex.Message}");
+            }
         }
 
         private void txtPesquisa_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -80,28 +100,52 @@ namespace Store.Calculator.App.Views
 
         private void btnImportar_Click(object sender, RoutedEventArgs e)
         {
-            using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
+            try
             {
-                fileDialog.InitialDirectory = "c:\\";
-                fileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                fileDialog.FilterIndex = 2;
-                fileDialog.RestoreDirectory = true;
-                var result = fileDialog.ShowDialog();
-                switch (result)
+                using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
                 {
-                    case System.Windows.Forms.DialogResult.OK:
-                        Importador importador = new Importador();
-                        materiais = importador.LeMateriais(fileDialog.FileName);
-                        dataGridServicos.ItemsSource = materiais;
-                        dataGridServicos.Items.Refresh();
-                        _handler.materialHandler.LimpaTable();
-                        _handler.materialHandler.CadastraLista(materiais);
-                        MessageBox.Show("Dados dos materiais foram atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
-                        break;
-                    case System.Windows.Forms.DialogResult.Cancel:
-                    default:
-                        break;
+                    fileDialog.InitialDirectory = "c:\\";
+                    fileDialog.Filter = "txt files (*.csv)|*.csv";
+                    fileDialog.FilterIndex = 2;
+                    fileDialog.RestoreDirectory = true;
+                    var result = fileDialog.ShowDialog();
+                    switch (result)
+                    {
+                        case System.Windows.Forms.DialogResult.OK:
+                            Importador importador = new Importador();
+                            materiais = importador.LeMateriais(fileDialog.FileName);
+                            dataGridServicos.ItemsSource = materiais;
+                            dataGridServicos.Items.Refresh();
+                            _handler.materialHandler.LimpaTable();
+                            _handler.materialHandler.CadastraLista(materiais);
+                            MessageBox.Show("Dados dos materiais foram atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+                        case System.Windows.Forms.DialogResult.Cancel:
+                        default:
+                            break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao importar dados: {ex.Message}");
+            }
+        }
+
+        private void dataGridServicos_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
+        {
+            dataGridServicos.Dispatcher.BeginInvoke(new Action(() => AtualizaDados()), System.Windows.Threading.DispatcherPriority.Background);
+        }
+
+        private void AtualizaDados()
+        {
+            try
+            {
+                dataGridServicos.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao editar célula: {ex.Message}");
             }
         }
     }

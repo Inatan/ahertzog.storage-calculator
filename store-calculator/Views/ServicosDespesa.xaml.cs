@@ -29,50 +29,69 @@ namespace Store.Calculator.App.Views
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtValor.Text))
-                AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
-            else
+            try
             {
-                ValorServico valorServico = new ValorServico(txtNome.Text, Convert.ToDecimal(txtValor.Text,AppUtils.cultureInfo));
-                servicos.Add(valorServico);
-                dataGridServicos.ItemsSource = servicos;
-                dataGridServicos.Items.Refresh();
-                txtNome.Clear();
-                txtValor.Clear();
+                if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtValor.Text))
+                    AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
+                else
+                {
+                    ValorServico valorServico = new ValorServico(txtNome.Text, Convert.ToDecimal(txtValor.Text,AppUtils.cultureInfo));
+                    servicos.Add(valorServico);
+                    dataGridServicos.ItemsSource = servicos;
+                    dataGridServicos.Items.Refresh();
+                    txtNome.Clear();
+                    txtValor.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao adicionar dados: {ex.Message}");
             }
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-
-            foreach (ValorServico item in dataGridServicos.Items)
+            try
             {
-                if (item.Id > 0)
-                    _handler.valorServicoHandler.Altera(item);
-                else
-                    _handler.valorServicoHandler.Cadastra(item);
-            }
-            foreach (ValorServico item in deletados)
-            {
-                _handler.valorServicoHandler.Deleta(item);
-            }
+                foreach (ValorServico item in dataGridServicos.Items)
+                {
+                    if (item.Id > 0)
+                        _handler.valorServicoHandler.Altera(item);
+                    else
+                        _handler.valorServicoHandler.Cadastra(item);
+                }
+                foreach (ValorServico item in deletados)
+                {
+                    _handler.valorServicoHandler.Deleta(item);
+                }
 
-            if (MessageBox.Show("Alterações foram salvas com sucesso", "Salvar", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
-                this.Close();
-        }
+                if (MessageBox.Show("Alterações foram salvas com sucesso", "Salvar", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                    this.Close();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao salvar dados: {ex.Message}");
+            }
+}
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)
         {
-            if(dataGridServicos.SelectedItem != null)
+            try
             {
-                deletados.Add(dataGridServicos.SelectedItem as ValorServico);
-                servicos.RemoveAt(dataGridServicos.SelectedIndex);
-                dataGridServicos.ItemsSource = servicos;
-                dataGridServicos.Items.Refresh();
+                if(dataGridServicos.SelectedItem != null)
+                {
+                    deletados.Add(dataGridServicos.SelectedItem as ValorServico);
+                    servicos.RemoveAt(dataGridServicos.SelectedIndex);
+                    dataGridServicos.ItemsSource = servicos;
+                    dataGridServicos.Items.Refresh();
+                }
+                else
+                    AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
             }
-            else
-                AppUtils.MensagemErro("Nome e valor são obrigatórios para o cadastro");
-
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao deletar a linha: {ex.Message}");
+            }
         }
 
         private void txtValor_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -91,29 +110,53 @@ namespace Store.Calculator.App.Views
 
         private void btnImportar_Click(object sender, RoutedEventArgs e)
         {
-            using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
+            try
             {
-                fileDialog.InitialDirectory = "c:\\";
-                fileDialog.Filter = "txt files (*.csv)|*.csv";
-                fileDialog.FilterIndex = 2;
-                fileDialog.RestoreDirectory = true;
-                var result = fileDialog.ShowDialog();
-                switch (result)
+                using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
                 {
-                    case System.Windows.Forms.DialogResult.OK:
-                        Importador importador = new Importador();
-                        List<ValorServico> valoresServicos = importador.LeValorServico(fileDialog.FileName);
+                    fileDialog.InitialDirectory = "c:\\";
+                    fileDialog.Filter = "txt files (*.csv)|*.csv";
+                    fileDialog.FilterIndex = 2;
+                    fileDialog.RestoreDirectory = true;
+                    var result = fileDialog.ShowDialog();
+                    switch (result)
+                    {
+                        case System.Windows.Forms.DialogResult.OK:
+                            Importador importador = new Importador();
+                            List<ValorServico> valoresServicos = importador.LeValorServico(fileDialog.FileName);
                         
-                        dataGridServicos.ItemsSource = valoresServicos;
-                        dataGridServicos.Items.Refresh();
-                        _handler.valorServicoHandler.LimpaTable();
-                        _handler.valorServicoHandler.CadastraLista(valoresServicos);
-                        MessageBox.Show("Dados dos serviços atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
-                        break;
-                    case System.Windows.Forms.DialogResult.Cancel:
-                    default:
-                        break;
+                            dataGridServicos.ItemsSource = valoresServicos;
+                            dataGridServicos.Items.Refresh();
+                            _handler.valorServicoHandler.LimpaTable();
+                            _handler.valorServicoHandler.CadastraLista(valoresServicos);
+                            MessageBox.Show("Dados dos serviços atualizados com sucesso", "Importação", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+                        case System.Windows.Forms.DialogResult.Cancel:
+                        default:
+                            break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao importar dados: {ex.Message}");
+            }
+        }
+
+        private void dataGridServicos_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
+        {
+            dataGridServicos.Dispatcher.BeginInvoke(new Action(() => AtualizaDados()), System.Windows.Threading.DispatcherPriority.Background);
+        }
+
+        private void AtualizaDados()
+        {
+            try
+            {
+                dataGridServicos.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao editar célula: {ex.Message}");
             }
         }
     }

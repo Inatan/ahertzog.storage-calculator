@@ -19,6 +19,7 @@
         <DataGrid x:Name="dataGridServicos" Height="545" Margin="23,60,23,0" VerticalAlignment="Top"
                 AutoGenerateColumns="False"
                 SelectionUnit="FullRow"
+                CellEditEnding="dataGridServicos_CellEditEnding"
                 SelectionMode="Extended"
                 CanUserReorderColumns="True"
                 CanUserResizeRows="True">
