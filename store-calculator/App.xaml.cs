@@ -20,25 +20,41 @@ namespace Store.Calculator.App
         IServiceProvider ServiceProvider;
         public App()
         {
-            DatabaseGenerator.Seed();
-            ServiceCollection services = new ServiceCollection();
-            ConfigureServices(services);
-            ServiceProvider = services.BuildServiceProvider();
+            try
+            {
+                DatabaseGenerator.Seed();
+                ServiceCollection services = new ServiceCollection();
+                ConfigureServices(services);
+                ServiceProvider = services.BuildServiceProvider();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao inicalizar o app: {ex.Message}");
+             
+            }
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            FrameworkElement.LanguageProperty.OverrideMetadata(
-                typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(
-                    XmlLanguage.GetLanguage(
-                        CultureInfo.CurrentCulture.IetfLanguageTag
+            try
+            {
+                FrameworkElement.LanguageProperty.OverrideMetadata(
+                    typeof(FrameworkElement),
+                    new FrameworkPropertyMetadata(
+                        XmlLanguage.GetLanguage(
+                            CultureInfo.CurrentCulture.IetfLanguageTag
+                        )
                     )
-                )
-            );
-            var menu = ServiceProvider.GetService<MenuInicial>();
-            menu.Show();
+                );
+                var menu = ServiceProvider.GetService<MenuInicial>();
+                menu.Show();
+            }
+            catch (Exception ex)
+            {
+                AppUtils.MensagemErro($"Erro ao conectar ao banco {ex.Message}");
+                var menu = new MenuInicial(new ServicesControl(new MaterialHandler(new RepositoryMaterial(new DbEstoqueContext())), new ValorServicoHandler(new RepositoryValorServico(new DbEstoqueContext()))));
+            }
         }
 
         public void ConfigureServices(IServiceCollection services)
