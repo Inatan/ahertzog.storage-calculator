@@ -32,6 +32,7 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                _logger.LogError(ex, ex.Message);
+                throw ex;
             }
         }
 
@@ -44,6 +45,7 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                throw ex;
             }
         }
 
@@ -59,6 +61,7 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                throw ex;
             }
         }
 
@@ -73,6 +76,7 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                throw ex;
             }
         }
 
@@ -86,6 +90,7 @@ namespace Store.Calculator.Services.Handlers
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                throw ex;
             }
         }
 
@@ -98,8 +103,8 @@ namespace Store.Calculator.Services.Handlers
             }
             catch (Exception ex)
             {
-                return new List<ValorServico>();
                 _logger.LogError(ex, ex.Message);
+                throw ex;
             }
 
         }

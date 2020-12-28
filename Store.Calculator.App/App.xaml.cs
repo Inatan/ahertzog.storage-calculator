@@ -9,6 +9,8 @@ using Store.Calculator.Services.Handlers;
 using Store.Calculator.Services;
 using System.Globalization;
 using System.Windows.Markup;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace Store.Calculator.App
 {
@@ -22,7 +24,7 @@ namespace Store.Calculator.App
         {
             try
             {
-                DatabaseGenerator.Seed();
+                //DatabaseGenerator.Seed();
                 ServiceCollection services = new ServiceCollection();
                 ConfigureServices(services);
                 ServiceProvider = services.BuildServiceProvider();
@@ -64,7 +66,13 @@ namespace Store.Calculator.App
             services.AddTransient<IMaterialHandler, MaterialHandler>();
             services.AddTransient<IValorServicoHandler, ValorServicoHandler>();
             services.AddSingleton<ServicesControl>();
-            services.AddDbContext<DbEstoqueContext>();
+            services.AddDbContext<DbEstoqueContext>(
+            options => {
+                options.UseSqlServer(
+                    ConfigurationManager.ConnectionStrings["DbStoreCalculator"].ConnectionString
+                //Configuration.GetConnectionString("DefaultConnection")
+                ) ;
+            }, ServiceLifetime.Transient);
             services.AddSingleton<MenuInicial>();
         }
     }
