@@ -24,7 +24,6 @@ namespace Store.Calculator.App
         {
             try
             {
-                //DatabaseGenerator.Seed();
                 ServiceCollection services = new ServiceCollection();
                 ConfigureServices(services);
                 ServiceProvider = services.BuildServiceProvider();
@@ -55,7 +54,6 @@ namespace Store.Calculator.App
             catch (Exception ex)
             {
                 AppUtils.MensagemErro($"Erro ao conectar ao banco {ex.Message}");
-                var menu = new MenuInicial(new ServicesControl(new MaterialHandler(new RepositoryMaterial(new DbEstoqueContext())), new ValorServicoHandler(new RepositoryValorServico(new DbEstoqueContext()))));
             }
         }
 
@@ -70,8 +68,8 @@ namespace Store.Calculator.App
             options => {
                 options.UseSqlServer(
                     ConfigurationManager.ConnectionStrings["DbStoreCalculator"].ConnectionString
-                //Configuration.GetConnectionString("DefaultConnection")
-                ) ;
+                    //(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true
+                );
             }, ServiceLifetime.Transient);
             services.AddSingleton<MenuInicial>();
         }

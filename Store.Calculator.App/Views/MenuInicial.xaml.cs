@@ -24,7 +24,10 @@ namespace Store.Calculator.App.Views
             }
             catch (System.Exception ex)
             {
-                AppUtils.MensagemErro(ex.Message);
+                if (ex.InnerException != null)
+                    AppUtils.MensagemErro(ex.InnerException.Message);
+                else
+                    AppUtils.MensagemErro(ex.Message);
             }
         }
 
@@ -37,7 +40,10 @@ namespace Store.Calculator.App.Views
             }
             catch (System.Exception ex)
             {
-                AppUtils.MensagemErro(ex.Message);
+                if(ex.InnerException != null)
+                    AppUtils.MensagemErro(ex.InnerException.Message);
+                else
+                    AppUtils.MensagemErro(ex.Message);
             }
         }
 
@@ -50,7 +56,10 @@ namespace Store.Calculator.App.Views
             }
             catch (System.Exception ex)
             {
-                AppUtils.MensagemErro(ex.Message);
+                if (ex.InnerException != null)
+                    AppUtils.MensagemErro(ex.InnerException.Message);
+                else
+                    AppUtils.MensagemErro(ex.Message);
             }
         }
     }
