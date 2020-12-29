@@ -65,7 +65,10 @@ namespace Store.Calculator.App.Views
             }
             catch (Exception ex)
             {
-                AppUtils.MensagemErro($"Erro ao salvar dados: {ex.Message}");
+                if (ex.InnerException != null)
+                    AppUtils.MensagemErro($"Erro ao salvar dados: {ex.InnerException.Message}");
+                else
+                    AppUtils.MensagemErro($"Erro ao salvar dados: {ex.Message}");
             }
         }
 
@@ -128,7 +131,10 @@ namespace Store.Calculator.App.Views
             }
             catch (Exception ex)
             {
-                AppUtils.MensagemErro($"Erro ao importar dados: {ex.Message}");
+                if (ex.InnerException != null)
+                    AppUtils.MensagemErro($"Erro ao importar dados: {ex.InnerException.Message}");
+                else
+                    AppUtils.MensagemErro($"Erro ao importar dados: {ex.Message}");
             }
         }
 
