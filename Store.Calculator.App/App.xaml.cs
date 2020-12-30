@@ -49,6 +49,7 @@ namespace Store.Calculator.App
                     )
                 );
                 var menu = ServiceProvider.GetService<MenuInicial>();
+                DatabaseGenerator.Seed(ServiceProvider.GetRequiredService<DbEstoqueContext>());
                 menu.Show();
             }
             catch (Exception ex)
@@ -69,6 +70,7 @@ namespace Store.Calculator.App
                 options.UseSqlServer(
                     ConfigurationManager.ConnectionStrings["DbStoreCalculator"].ConnectionString
                     //(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true
+                    //this.Database.EnsureCreated();
                 );
             }, ServiceLifetime.Transient);
             services.AddSingleton<MenuInicial>();

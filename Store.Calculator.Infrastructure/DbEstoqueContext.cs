@@ -8,7 +8,6 @@ namespace Store.Calculator.Infrastructure
 
         public DbEstoqueContext(): base()
         {
-
         }
 
         public DbEstoqueContext(DbContextOptions<DbEstoqueContext> options) :base(options)
