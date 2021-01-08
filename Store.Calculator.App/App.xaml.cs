@@ -48,8 +48,17 @@ namespace Store.Calculator.App
                         )
                     )
                 );
+                using (var serviceScope = ServiceProvider
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+                    {
+                        using (var context = serviceScope.ServiceProvider.GetService<DbEstoqueContext>())
+                        {
+                            context.Database.Migrate();
+                        }
+                    }
                 var menu = ServiceProvider.GetService<MenuInicial>();
-                DatabaseGenerator.Seed(ServiceProvider.GetRequiredService<DbEstoqueContext>());
+                //DatabaseGenerator.Seed(ServiceProvider.GetRequiredService<DbEstoqueContext>());
                 menu.Show();
             }
             catch (Exception ex)
@@ -73,7 +82,9 @@ namespace Store.Calculator.App
                     //this.Database.EnsureCreated();
                 );
             }, ServiceLifetime.Transient);
-            services.AddSingleton<MenuInicial>();
+
+            
+                services.AddSingleton<MenuInicial>();
         }
     }
       
