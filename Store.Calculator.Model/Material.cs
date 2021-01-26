@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Store.Calculator.Model
 {
+    [Table("Material")]
     public class Material
     {
         public int Id { get; set; }

@@ -1,8 +1,10 @@
 ﻿using Store.Calculator.Model.Utils;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Store.Calculator.Model
 {
+    [Table("ValorServico")]
     public class ValorServico
     {
         public ValorServico(string nome, decimal valor)
