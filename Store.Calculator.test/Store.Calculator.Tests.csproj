@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Store.Calculator.Infrastructure\Store.Calculator.Infrastructure.csproj" />
-    <ProjectReference Include="..\Store.Calculator.Model\Store.Calculator.Model.csproj" />
+    <ProjectReference Include="..\Store.Calculator.Domain\Store.Calculator.Domain.csproj" />
     <ProjectReference Include="..\Store.Calculator.Services\Store.Calculator.Services.csproj" />
   </ItemGroup>
 

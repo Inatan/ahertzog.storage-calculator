@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using Store.Calculator.Model;
-using Store.Calculator.Model.Utils;
+using Store.Calculator.Domain;
+using Store.Calculator.Domain.Utils;
 using Store.Calculator.Services;
 
 namespace Store.Calculator.App.Views
@@ -46,27 +46,27 @@ namespace Store.Calculator.App.Views
         }
         private void TextInputValorFrete(object sender, TextCompositionEventArgs e)
         {
-            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Domain.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtValorFrete_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Domain.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtQuantoFaz_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Domain.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void TxtQuantidade_KeyUp(object sender, KeyEventArgs e)
         {
-            txtValorUnidade.Text = Model.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
+            txtValorUnidade.Text = Domain.Material.CalculaValorUnitario(txtQuantidade.Text, txtQuantoFaz.Text, txtValorPago.Text, txtValorFrete.Text);
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Model.Material estoque = 
+            Domain.Material estoque = 
                 new Material(
                     txtNome.Text,
                     txtUnidadeMedida.Text,

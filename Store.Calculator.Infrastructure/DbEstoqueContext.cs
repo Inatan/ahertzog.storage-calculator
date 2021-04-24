@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Store.Calculator.Model;
+using Store.Calculator.Domain;
 
 namespace Store.Calculator.Infrastructure
 {

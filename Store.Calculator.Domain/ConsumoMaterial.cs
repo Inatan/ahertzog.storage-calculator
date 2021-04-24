@@ -1,4 +1,4 @@
-﻿namespace Store.Calculator.Model
+﻿namespace Store.Calculator.Domain
 {
     public class ConsumoMaterial
     {

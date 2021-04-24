@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Store.Calculator.Infrastructure.Repository;
-using Store.Calculator.Model;
+using Store.Calculator.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;

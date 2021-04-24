@@ -1,4 +1,4 @@
-﻿using Store.Calculator.Model;
+﻿using Store.Calculator.Domain;
 using Xunit;
 
 namespace Store.Calculator.Tests

@@ -1,6 +1,6 @@
 ﻿using GemBox.Document;
 
-namespace Store.Calculator.Model.Utils
+namespace Store.Calculator.Domain.Utils
 {
     public class PdfCreator
     {

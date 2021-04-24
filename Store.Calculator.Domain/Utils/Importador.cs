@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace Store.Calculator.Model.Utils
+namespace Store.Calculator.Domain.Utils
 {
     public class Importador
     {

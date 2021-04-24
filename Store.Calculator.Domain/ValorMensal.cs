@@ -1,8 +1,8 @@
-﻿using Store.Calculator.Model.Utils;
+﻿using Store.Calculator.Domain.Utils;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Store.Calculator.Model
+namespace Store.Calculator.Domain
 {
     [Table("ValorServico")]
     public class ValorServico

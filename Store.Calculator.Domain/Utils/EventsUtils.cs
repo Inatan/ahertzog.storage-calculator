@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Store.Calculator.Model.Utils
+namespace Store.Calculator.Domain.Utils
 {
     public class EventsUtils
     {

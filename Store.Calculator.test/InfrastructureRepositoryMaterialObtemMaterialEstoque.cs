@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.Calculator.Infrastructure;
 using Store.Calculator.Infrastructure.Repository;
-using Store.Calculator.Model;
+using Store.Calculator.Domain;
 using Store.Calculator.Services.Handlers;
 using System.Collections.Generic;
 using Xunit;

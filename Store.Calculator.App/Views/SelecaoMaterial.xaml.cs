@@ -1,5 +1,5 @@
-﻿using Store.Calculator.Model;
-using Store.Calculator.Model.Utils;
+﻿using Store.Calculator.Domain;
+using Store.Calculator.Domain.Utils;
 using Store.Calculator.Services;
 using Store.Calculator.Services.Handlers;
 using System;

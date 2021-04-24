@@ -1,4 +1,4 @@
-using Store.Calculator.Model.Utils;
+using Store.Calculator.Domain.Utils;
 using System;
 using Xunit;
 

@@ -1797,23 +1797,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Store.Calculator.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.10",
-          "Store.Calculator.Model": "1.0.0",
-          "System.Configuration.ConfigurationManager": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Store.Calculator.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Store.Calculator.Infrastructure.dll": {}
-        }
-      },
-      "Store.Calculator.Model/1.0.0": {
+      "Store.Calculator.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1821,10 +1805,26 @@
           "ceTe.DynamicPDF.CoreSuite.NET": "11.3.0"
         },
         "compile": {
-          "bin/placeholder/Store.Calculator.Model.dll": {}
+          "bin/placeholder/Store.Calculator.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Store.Calculator.Model.dll": {}
+          "bin/placeholder/Store.Calculator.Domain.dll": {}
+        }
+      },
+      "Store.Calculator.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.10",
+          "Store.Calculator.Domain": "1.0.0",
+          "System.Configuration.ConfigurationManager": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Store.Calculator.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Store.Calculator.Infrastructure.dll": {}
         }
       }
     }
@@ -6612,15 +6612,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Store.Calculator.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Store.Calculator.Domain/Store.Calculator.Domain.csproj",
+      "msbuildProject": "../Store.Calculator.Domain/Store.Calculator.Domain.csproj"
+    },
     "Store.Calculator.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../Store.Calculator.Infrastructure/Store.Calculator.Infrastructure.csproj",
       "msbuildProject": "../Store.Calculator.Infrastructure/Store.Calculator.Infrastructure.csproj"
-    },
-    "Store.Calculator.Model/1.0.0": {
-      "type": "project",
-      "path": "../Store.Calculator.Model/Store.Calculator.Model.csproj",
-      "msbuildProject": "../Store.Calculator.Model/Store.Calculator.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6693,7 +6693,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
