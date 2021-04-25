@@ -107,7 +107,7 @@ namespace Store.Calculator.App.Views
                 using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
                 {
                     fileDialog.InitialDirectory = "c:\\";
-                    fileDialog.Filter = "txt files (*.csv)|*.csv";
+                    fileDialog.Filter = "Arquivo csv (*.csv)|*.csv";
                     fileDialog.FilterIndex = 2;
                     fileDialog.RestoreDirectory = true;
                     var result = fileDialog.ShowDialog();

@@ -13,9 +13,9 @@ namespace Store.Calculator.Infrastructure.Seeding
                 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

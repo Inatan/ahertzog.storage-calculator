@@ -66,7 +66,7 @@ namespace Store.Calculator.App.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Domain.Material estoque = 
+            Material estoque = 
                 new Material(
                     txtNome.Text,
                     txtUnidadeMedida.Text,

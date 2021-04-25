@@ -14,9 +14,6 @@ using System.Configuration;
 
 namespace Store.Calculator.App
 {
-    /// <summary>
-    /// Interação lógica para App.xaml
-    /// </summary>
     public partial class App : Application
     {
         IServiceProvider ServiceProvider;
@@ -31,7 +28,6 @@ namespace Store.Calculator.App
             catch (Exception ex)
             {
                 AppUtils.MensagemErro($"Erro ao inicalizar o app: {ex.Message}");
-             
             }
         }
 
@@ -52,13 +48,13 @@ namespace Store.Calculator.App
                 .GetRequiredService<IServiceScopeFactory>()
                 .CreateScope())
                     {
+                        DatabaseGenerator.Seed(ServiceProvider.GetRequiredService<DbEstoqueContext>());
                         using (var context = serviceScope.ServiceProvider.GetService<DbEstoqueContext>())
                         {
                             context.Database.Migrate();
                         }
                     }
                 var menu = ServiceProvider.GetService<MenuInicial>();
-                //DatabaseGenerator.Seed(ServiceProvider.GetRequiredService<DbEstoqueContext>());
                 menu.Show();
             }
             catch (Exception ex)
@@ -78,13 +74,10 @@ namespace Store.Calculator.App
             options => {
                 options.UseSqlServer(
                     ConfigurationManager.ConnectionStrings["DbStoreCalculator"].ConnectionString
-                    //(localdb)\\mssqllocaldb;Database=DbStoreCalculator;Trusted_Connection=true
-                    //this.Database.EnsureCreated();
                 );
             }, ServiceLifetime.Transient);
 
-            
-                services.AddSingleton<MenuInicial>();
+            services.AddSingleton<MenuInicial>();
         }
     }
       
